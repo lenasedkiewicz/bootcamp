@@ -6,7 +6,17 @@ $font-content: "Signika", sans-serif;
 $font-color-light: #fff;
 $font-color-dark: #2c2c54;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.7;
   font-family: $font-content;
 }
 
@@ -19,18 +29,18 @@ h6 {
   font-family: $font-headers;
 }
 
-/* container mainstyles */
+/* Main styles */
 
-.container,
-.container-accent {
+.fullwidth,
+.fullwidth-accent {
   width: 100vw;
 }
 
-.container {
+.fullwidth {
   background: #fff;
   color: $font-color-dark;
 }
-.container-accent {
+.fullwidth-accent {
   background: $color-accents;
   color: $font-color-light;
 }

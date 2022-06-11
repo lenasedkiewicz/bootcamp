@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: "Signika", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inconsolata", monospace;
+}
+
+/* Main styles */
+.fullwidth,
+.fullwidth-accent {
+  width: 100vw;
+}
+
+.fullwidth {
+  background: #fff;
+  color: #2c2c54;
+}
+
+.fullwidth-accent {
+  background: #218c74;
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
