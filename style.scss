@@ -12,6 +12,8 @@ $font-color-dark: #2c2c54;
   box-sizing: border-box;
 }
 
+/* Main styles */
+
 body {
   margin: 0;
   text-align: center;
@@ -29,7 +31,25 @@ h6 {
   font-family: $font-headers;
 }
 
-/* Main styles */
+h1 {
+  font-size: 72px;
+  line-height: 1.2;
+  word-spacing: -24px;
+}
+
+h2 {
+  font-size: 48px;
+  margin: 0 0 72px 0;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 0 0 12px 0;
+}
+
+h4 {
+  font-size: 20px;
+}
 
 .fullwidth,
 .fullwidth-accent {
@@ -43,4 +63,15 @@ h6 {
 .fullwidth-accent {
   background: $color-accents;
   color: $font-color-light;
+}
+
+/* Services section */
+
+.services__number {
+    font-size: 144px;
+    line-height: 1;
+    color: $color-accents;
+    font-family: $font-headers;
+    font-weight: 900;
+    opacity: 0.3;
 }
