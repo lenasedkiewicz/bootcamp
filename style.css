@@ -71,8 +71,62 @@ header {
 }
 
 /* Navigation */
-nav > ul {
+.navigation {
+  padding: 12px 0;
+}
+
+.navigation ul {
   margin: 0;
+  padding: 0;
+  list-style-type: none !important;
+}
+
+.navigation li {
+  display: inline-block;
+  margin-right: 36px;
+  position: relative;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navigation a:hover {
+  color: #ffb142;
+}
+
+.navigation ul ul li {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.navigation li ul {
+  display: none;
+}
+
+.navigation li:hover ul {
+  display: block;
+  text-align: center;
+  position: absolute;
+  background-color: #fff;
+}
+
+.navigation li ul {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.navigation li ul a {
+  max-width: 95px;
+  color: #227093;
+  display: block;
+  padding: 10px;
+}
+
+.nalivation li ul a:hover {
+  color: #ffb142;
 }
 
 /* Services section */
