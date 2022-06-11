@@ -1,3 +1,36 @@
 $color-main: #227093;
 $color-accents: #218c74;
 $color-social-media: #ffb142;
+$font-headers: "Inconsolata", monospace;
+$font-content: "Signika", sans-serif;
+$font-color-light: #fff;
+$font-color-dark: #2c2c54;
+
+body {
+  font-family: $font-content;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-headers;
+}
+
+/* container mainstyles */
+
+.container,
+.container-accent {
+  width: 100vw;
+}
+
+.container {
+  background: #fff;
+  color: $font-color-dark;
+}
+.container-accent {
+  background: $color-accents;
+  color: $font-color-light;
+}
