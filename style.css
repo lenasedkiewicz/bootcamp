@@ -1,3 +1,5 @@
+/* Variables */
+/* Main styles */
 *,
 *::before,
 *::after {
@@ -5,7 +7,6 @@
           box-sizing: border-box;
 }
 
-/* Main styles */
 body {
   margin: 0;
   text-align: center;
