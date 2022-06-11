@@ -1,5 +1,5 @@
 /* Variables */
-/* Main styles */
+/* Global */
 *,
 *::before,
 *::after {
@@ -13,6 +13,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   font-family: "Signika", sans-serif;
+  color: #2c2c54;
 }
 
 h1,
@@ -51,12 +52,27 @@ h4 {
 
 .fullwidth {
   background: #fff;
-  color: #2c2c54;
 }
 
 .fullwidth-accent {
   background: #218c74;
   color: #fff;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+section,
+header {
+  padding: 96px 0;
+}
+
+/* Navigation */
+nav > ul {
+  margin: 0;
 }
 
 /* Services section */

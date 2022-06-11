@@ -12,7 +12,7 @@ $heading2: 48px;
 $heading3: 24px;
 $heading4: 20px;
 
-/* Main styles */
+/* Global */
 
 *,
 *::before,
@@ -26,6 +26,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   font-family: $font-content;
+  color: $font-color-dark;
 }
 
 h1,
@@ -64,11 +65,27 @@ h4 {
 
 .fullwidth {
   background: #fff;
-  color: $font-color-dark;
 }
 .fullwidth-accent {
   background: $color-accents;
   color: $font-color-light;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+section,
+header {
+  padding: 96px 0;
+}
+
+/* Navigation */
+
+nav > ul {
+    margin: 0;
 }
 
 /* Services section */
