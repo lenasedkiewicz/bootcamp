@@ -74,7 +74,7 @@ header {
 }
 
 .services__content,
-.blog__content {
+.blog__content .contact-form__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,12 +88,6 @@ header {
 /* Navigation */
 .navigation {
   padding: 12px 0 12px 100px;
-}
-
-@media all and (max-width: 800px) {
-  .navigation {
-    padding: 12px 50px;
-  }
 }
 
 .navigation ul {
@@ -285,8 +279,24 @@ header {
   color: #fff;
 }
 
+.btn-form {
+  border-color: #ffffff;
+  color: #ffffff;
+  background-image: #ffffff;
+  /* for browsers that do not support gradients */
+  /* Safari 5.1 - 6.0 */
+  /* Opera 11.1 - 12.0 */
+  /* Firefox 3.6 do 15 */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffffff), color-stop(50%, transparent));
+  background-image: linear-gradient(90deg, #ffffff 50%, transparent 50%);
+  /* standard syntax */
+  background-position: 100% 0;
+  background-size: 300%;
+}
+
 .btn-form:hover {
   color: #2c2c54;
+  background-position: 0 100%;
 }
 
 /* Services section */
@@ -327,15 +337,6 @@ header {
       -ms-flex: 0 0 50%;
           flex: 0 0 50%;
   position: relative;
-  margin-bottom: 30px;
-}
-
-@media all and (max-width: 1200px) {
-  .blog__content-box {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
-  }
 }
 
 .blog__content-box-img {
@@ -382,12 +383,6 @@ div.blog__content-box-img:hover:after {
 }
 
 /* Contact */
-.contact-form__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .contact-form__form {
   -webkit-box-flex: 2;
       -ms-flex: 2 0 0px;
@@ -497,5 +492,49 @@ ul#social-media li {
 .page-footer i:hover {
   -webkit-transform: scale(1.2, 1.2);
           transform: scale(1.2, 1.2);
+}
+
+/* Media */
+@media all and (max-width: 800px) {
+  .navigation {
+    padding: 12px 50px;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .blog__content-box {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  section,
+  header {
+    padding: 30px 0;
+  }
+  .services__content,
+  .blog__content,
+  .contact-form__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .blog__content-box-img {
+    position: relative;
+    width: 100%;
+    height: 150px;
+  }
+  .blog__content-box-content {
+    padding: 30px 0;
+  }
+  .contact-form__content {
+    text-align: center;
+  }
+  .contact-form__info h4:first-of-type {
+    margin-top: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
