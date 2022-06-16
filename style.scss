@@ -23,7 +23,7 @@ $transition: all 1s;
 
 body {
   margin: 0;
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   line-height: 1.7;
   font-weight: 400;
@@ -89,10 +89,14 @@ header {
 /* Navigation */
 
 .navigation {
-  padding: 12px 0;
+  padding: 12px 0 12px 100px;
+  @media all and (max-width: 800px) {
+    padding: 12px 50px;
+  }
 }
 
 .navigation ul {
+
   margin: 0;
   padding: 0;
   list-style-type: none !important;
@@ -196,16 +200,54 @@ header {
   background-image: linear-gradient(90deg, #ffffff 50%, transparent 50%); /* standard syntax */
   background-position: 100% 0;
   background-size: 300%;
+  border-color: $font-color-light;
+  color: $font-color-light;
 }
 .btn-one:hover {
   color: $font-color-dark;
 }
 
-.btn-one {
-  border-color: $font-color-light;
-  color: $font-color-light;
+.btn-s1 {
+  border-color: $color-accents;
+  color: $color-accents;
+  background-image: $color-accents; /* for browsers that do not support gradients */
+  background-image: -webkit-linear-gradient(90deg, $color-accents 50%, transparent 50%);/* Safari 5.1 - 6.0 */
+  background-image: -o-linear-gradient(90deg, $color-accents 50%, transparent 50%); /* Opera 11.1 - 12.0 */
+  background-image: -moz-linear-gradient(90deg, $color-accents 50%, transparent 50%); /* Firefox 3.6 do 15 */
+  background-image: linear-gradient(90deg, $color-accents 50%, transparent 50%); /* standard syntax */
+  background-position: 100% 0;
+  background-size: 300%;
+  position: absolute;
+  bottom: 0;
 }
 
+.btn-s2 {
+  border-color: $color-main;
+  color: $color-main;
+  background-image: $color-main; /* for browsers that do not support gradients */
+  background-image: -webkit-linear-gradient(90deg, $color-main 50%, transparent 50%);/* Safari 5.1 - 6.0 */
+  background-image: -o-linear-gradient(90deg, $color-main 50%, transparent 50%); /* Opera 11.1 - 12.0 */
+  background-image: -moz-linear-gradient(90deg, $color-main 50%, transparent 50%); /* Firefox 3.6 do 15 */
+  background-image: linear-gradient(90deg, $color-main 50%, transparent 50%); /* standard syntax */
+  background-position: 100% 0;
+  background-size: 300%;
+  position: absolute;
+  bottom: 0;
+}
+
+.btn-s3 {
+  border-color: $font-color-dark;
+  color: $font-color-dark;
+  background-image: $font-color-dark; /* for browsers that do not support gradients */
+  background-image: -webkit-linear-gradient(90deg, $font-color-dark 50%, transparent 50%);/* Safari 5.1 - 6.0 */
+  background-image: -o-linear-gradient(90deg, $font-color-dark 50%, transparent 50%); /* Opera 11.1 - 12.0 */
+  background-image: -moz-linear-gradient(90deg, $font-color-dark 50%, transparent 50%); /* Firefox 3.6 do 15 */
+  background-image: linear-gradient(90deg, $font-color-dark 50%, transparent 50%); /* standard syntax */
+  background-position: 100% 0;
+  background-size: 300%;
+  position: absolute;
+  bottom: 0;
+}
 /* Services section */
 
 .services__number {
@@ -215,4 +257,29 @@ header {
   font-family: $font-headers;
   font-weight: 900;
   opacity: 0.3;
+}
+
+.services__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.services__content-box {
+  flex: 0 0 33.333%;
+  position: relative;
+  padding: 25px;
+}
+
+.services__number {
+  position: absolute;
+  left: 15px;
+  top: -10px;
+}
+
+.services__content-box p:first-of-type {
+  font-weight: 700;
+}
+.services__content-box p:last-of-type {
+  padding-bottom: 60px;
 }

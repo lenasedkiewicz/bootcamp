@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   line-height: 1.7;
   font-weight: 400;
@@ -75,7 +75,13 @@ header {
 
 /* Navigation */
 .navigation {
-  padding: 12px 0;
+  padding: 12px 0 12px 100px;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    padding: 12px 50px;
+  }
 }
 
 .navigation ul {
@@ -189,15 +195,63 @@ header {
   /* standard syntax */
   background-position: 100% 0;
   background-size: 300%;
+  border-color: #fff;
+  color: #fff;
 }
 
 .btn-one:hover {
   color: #2c2c54;
 }
 
-.btn-one {
-  border-color: #fff;
-  color: #fff;
+.btn-s1 {
+  border-color: #218c74;
+  color: #218c74;
+  background-image: #218c74;
+  /* for browsers that do not support gradients */
+  /* Safari 5.1 - 6.0 */
+  /* Opera 11.1 - 12.0 */
+  /* Firefox 3.6 do 15 */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #218c74), color-stop(50%, transparent));
+  background-image: linear-gradient(90deg, #218c74 50%, transparent 50%);
+  /* standard syntax */
+  background-position: 100% 0;
+  background-size: 300%;
+  position: absolute;
+  bottom: 0;
+}
+
+.btn-s2 {
+  border-color: #227093;
+  color: #227093;
+  background-image: #227093;
+  /* for browsers that do not support gradients */
+  /* Safari 5.1 - 6.0 */
+  /* Opera 11.1 - 12.0 */
+  /* Firefox 3.6 do 15 */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #227093), color-stop(50%, transparent));
+  background-image: linear-gradient(90deg, #227093 50%, transparent 50%);
+  /* standard syntax */
+  background-position: 100% 0;
+  background-size: 300%;
+  position: absolute;
+  bottom: 0;
+}
+
+.btn-s3 {
+  border-color: #2c2c54;
+  color: #2c2c54;
+  background-image: #2c2c54;
+  /* for browsers that do not support gradients */
+  /* Safari 5.1 - 6.0 */
+  /* Opera 11.1 - 12.0 */
+  /* Firefox 3.6 do 15 */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #2c2c54), color-stop(50%, transparent));
+  background-image: linear-gradient(90deg, #2c2c54 50%, transparent 50%);
+  /* standard syntax */
+  background-position: 100% 0;
+  background-size: 300%;
+  position: absolute;
+  bottom: 0;
 }
 
 /* Services section */
@@ -208,5 +262,38 @@ header {
   font-family: "Inconsolata", monospace;
   font-weight: 900;
   opacity: 0.3;
+}
+
+.services__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.services__content-box {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.333%;
+          flex: 0 0 33.333%;
+  position: relative;
+  padding: 25px;
+}
+
+.services__number {
+  position: absolute;
+  left: 15px;
+  top: -10px;
+}
+
+.services__content-box p:first-of-type {
+  font-weight: 700;
+}
+
+.services__content-box p:last-of-type {
+  padding-bottom: 60px;
 }
 /*# sourceMappingURL=style.css.map */
