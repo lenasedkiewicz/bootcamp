@@ -73,7 +73,8 @@ header {
   padding: 96px 0;
 }
 
-.services__content, .blog__content {
+.services__content,
+.blog__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -280,6 +281,14 @@ header {
   transition: all 0.2s;
 }
 
+.btn-form {
+  color: #fff;
+}
+
+.btn-form:hover {
+  color: #2c2c54;
+}
+
 /* Services section */
 .services__number {
   font-size: 144px;
@@ -370,5 +379,123 @@ div.blog__content-box-img:hover:after {
 
 .blog__content-box-content p:last-of-type {
   font-weight: 700;
+}
+
+/* Contact */
+.contact-form__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact-form__form {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 0 0px;
+          flex: 2 0 0;
+}
+
+.contact-form__form input,
+.contact-form__form textarea {
+  display: block;
+  width: 90%;
+  padding: 15px 0;
+  margin-bottom: 5px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  background: #218c74;
+  font-size: 18px;
+  font-weight: 500;
+  outline: none;
+}
+
+.contact-form__form textarea {
+  height: 150px;
+}
+
+.contact-form__form input::-webkit-input-placeholder,
+.contact-form__form textarea::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.contact-form__form input:-ms-input-placeholder,
+.contact-form__form textarea:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.contact-form__form input::-ms-input-placeholder,
+.contact-form__form textarea::-ms-input-placeholder {
+  opacity: 1;
+}
+
+.contact-form__form input::placeholder,
+.contact-form__form textarea::placeholder {
+  opacity: 1;
+}
+
+.contact-form__form input:focus-visible,
+.contact-form__form textarea:focus-visible {
+  border: 2px solid #fff;
+}
+
+.contact-form__form a {
+  display: inline-block;
+}
+
+.contact-form__info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+}
+
+.contact-form__info h4 {
+  margin-bottom: 5px;
+}
+
+.contact-form__info h4:first-of-type {
+  margin-top: 0;
+}
+
+.contact-form__info p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+/* Footer */
+.page-footer {
+  margin: 48px 0;
+}
+
+ul#social-media {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul#social-media li {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 10px;
+}
+
+.page-footer a {
+  font-size: 0;
+}
+
+.page-footer i {
+  font-size: 24px;
+  background: #ffb142;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.page-footer i:hover {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
 }
 /*# sourceMappingURL=style.css.map */

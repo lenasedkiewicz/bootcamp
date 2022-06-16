@@ -86,7 +86,8 @@ header {
   padding: 96px 0;
 }
 
-.services__content, .blog__content {
+.services__content,
+.blog__content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -102,7 +103,6 @@ header {
 }
 
 .navigation ul {
-
   margin: 0;
   padding: 0;
   list-style-type: none !important;
@@ -200,10 +200,26 @@ header {
 }
 .btn-one {
   background-image: #ffffff; /* for browsers that do not support gradients */
-  background-image: -webkit-linear-gradient(90deg, #ffffff 50%, transparent 50%);/* Safari 5.1 - 6.0 */
-  background-image: -o-linear-gradient(90deg, #ffffff 50%, transparent 50%); /* Opera 11.1 - 12.0 */
-  background-image: -moz-linear-gradient(90deg, #ffffff 50%, transparent 50%); /* Firefox 3.6 do 15 */
-  background-image: linear-gradient(90deg, #ffffff 50%, transparent 50%); /* standard syntax */
+  background-image: -webkit-linear-gradient(
+    90deg,
+    #ffffff 50%,
+    transparent 50%
+  ); /* Safari 5.1 - 6.0 */
+  background-image: -o-linear-gradient(
+    90deg,
+    #ffffff 50%,
+    transparent 50%
+  ); /* Opera 11.1 - 12.0 */
+  background-image: -moz-linear-gradient(
+    90deg,
+    #ffffff 50%,
+    transparent 50%
+  ); /* Firefox 3.6 do 15 */
+  background-image: linear-gradient(
+    90deg,
+    #ffffff 50%,
+    transparent 50%
+  ); /* standard syntax */
   background-position: 100% 0;
   background-size: 300%;
   border-color: $font-color-light;
@@ -217,10 +233,26 @@ header {
   border-color: $color-accents;
   color: $color-accents;
   background-image: $color-accents; /* for browsers that do not support gradients */
-  background-image: -webkit-linear-gradient(90deg, $color-accents 50%, transparent 50%);/* Safari 5.1 - 6.0 */
-  background-image: -o-linear-gradient(90deg, $color-accents 50%, transparent 50%); /* Opera 11.1 - 12.0 */
-  background-image: -moz-linear-gradient(90deg, $color-accents 50%, transparent 50%); /* Firefox 3.6 do 15 */
-  background-image: linear-gradient(90deg, $color-accents 50%, transparent 50%); /* standard syntax */
+  background-image: -webkit-linear-gradient(
+    90deg,
+    $color-accents 50%,
+    transparent 50%
+  ); /* Safari 5.1 - 6.0 */
+  background-image: -o-linear-gradient(
+    90deg,
+    $color-accents 50%,
+    transparent 50%
+  ); /* Opera 11.1 - 12.0 */
+  background-image: -moz-linear-gradient(
+    90deg,
+    $color-accents 50%,
+    transparent 50%
+  ); /* Firefox 3.6 do 15 */
+  background-image: linear-gradient(
+    90deg,
+    $color-accents 50%,
+    transparent 50%
+  ); /* standard syntax */
   background-position: 100% 0;
   background-size: 300%;
   position: absolute;
@@ -231,10 +263,26 @@ header {
   border-color: $color-main;
   color: $color-main;
   background-image: $color-main; /* for browsers that do not support gradients */
-  background-image: -webkit-linear-gradient(90deg, $color-main 50%, transparent 50%);/* Safari 5.1 - 6.0 */
-  background-image: -o-linear-gradient(90deg, $color-main 50%, transparent 50%); /* Opera 11.1 - 12.0 */
-  background-image: -moz-linear-gradient(90deg, $color-main 50%, transparent 50%); /* Firefox 3.6 do 15 */
-  background-image: linear-gradient(90deg, $color-main 50%, transparent 50%); /* standard syntax */
+  background-image: -webkit-linear-gradient(
+    90deg,
+    $color-main 50%,
+    transparent 50%
+  ); /* Safari 5.1 - 6.0 */
+  background-image: -o-linear-gradient(
+    90deg,
+    $color-main 50%,
+    transparent 50%
+  ); /* Opera 11.1 - 12.0 */
+  background-image: -moz-linear-gradient(
+    90deg,
+    $color-main 50%,
+    transparent 50%
+  ); /* Firefox 3.6 do 15 */
+  background-image: linear-gradient(
+    90deg,
+    $color-main 50%,
+    transparent 50%
+  ); /* standard syntax */
   background-position: 100% 0;
   background-size: 300%;
   position: absolute;
@@ -245,10 +293,26 @@ header {
   border-color: $font-color-dark;
   color: $font-color-dark;
   background-image: $font-color-dark; /* for browsers that do not support gradients */
-  background-image: -webkit-linear-gradient(90deg, $font-color-dark 50%, transparent 50%);/* Safari 5.1 - 6.0 */
-  background-image: -o-linear-gradient(90deg, $font-color-dark 50%, transparent 50%); /* Opera 11.1 - 12.0 */
-  background-image: -moz-linear-gradient(90deg, $font-color-dark 50%, transparent 50%); /* Firefox 3.6 do 15 */
-  background-image: linear-gradient(90deg, $font-color-dark 50%, transparent 50%); /* standard syntax */
+  background-image: -webkit-linear-gradient(
+    90deg,
+    $font-color-dark 50%,
+    transparent 50%
+  ); /* Safari 5.1 - 6.0 */
+  background-image: -o-linear-gradient(
+    90deg,
+    $font-color-dark 50%,
+    transparent 50%
+  ); /* Opera 11.1 - 12.0 */
+  background-image: -moz-linear-gradient(
+    90deg,
+    $font-color-dark 50%,
+    transparent 50%
+  ); /* Firefox 3.6 do 15 */
+  background-image: linear-gradient(
+    90deg,
+    $font-color-dark 50%,
+    transparent 50%
+  ); /* standard syntax */
   background-position: 100% 0;
   background-size: 300%;
   position: absolute;
@@ -267,6 +331,14 @@ header {
   color: $font-color-dark;
   font-weight: 700;
   transition: all 0.2s;
+}
+
+.btn-form {
+  color: $font-color-light;
+}
+
+.btn-form:hover {
+  color: $font-color-dark;
 }
 /* Services section */
 
@@ -299,7 +371,6 @@ header {
 }
 
 /* Blog */
-
 
 .blog__content-box {
   flex: 0 0 50%;
@@ -348,4 +419,97 @@ div.blog__content-box-img:hover:after {
 
 .blog__content-box-content p:last-of-type {
   font-weight: 700;
+}
+
+/* Contact */
+
+.contact-form__content {
+  display: flex;
+}
+.contact-form__form {
+  flex: 2 0 0;
+}
+
+.contact-form__form input,
+.contact-form__form textarea {
+  display: block;
+  width: 90%;
+  padding: 15px 0;
+  margin-bottom: 5px;
+  border: none;
+  border-bottom: 2px solid $font-color-light;
+  color: $font-color-light;
+  background: $color-accents;
+  font-size: 18px;
+  font-weight: 500;
+  outline: none;
+}
+
+.contact-form__form textarea {
+  height: 150px;
+}
+
+.contact-form__form input::placeholder,
+.contact-form__form textarea::placeholder {
+  opacity: 1;
+}
+
+.contact-form__form input:focus-visible,
+.contact-form__form textarea:focus-visible {
+  border: 2px solid $font-color-light;
+}
+
+.contact-form__form a {
+  display: inline-block;
+}
+.contact-form__info {
+  flex: 1 0 0;
+}
+
+.contact-form__info h4 {
+  margin-bottom: 5px;
+}
+
+.contact-form__info h4:first-of-type {
+  margin-top: 0;
+}
+.contact-form__info p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+/* Footer */
+
+.page-footer {
+  margin: 48px 0;
+}
+ul#social-media {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul#social-media li {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 10px;
+}
+
+.page-footer a {
+  font-size: 0;
+}
+.page-footer i {
+  font-size: $heading3;
+  background: $color-social-media;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  color: $font-color-light;
+  border-radius: 50%;
+}
+
+.page-footer i:hover {
+  transform: scale(1.2, 1.2);
 }
