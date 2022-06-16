@@ -11,6 +11,7 @@ $heading1: 72px;
 $heading2: 48px;
 $heading3: 24px;
 $heading4: 20px;
+$transition: all 1s;
 
 /* Global */
 
@@ -25,6 +26,7 @@ body {
   text-align: center;
   font-size: 16px;
   line-height: 1.7;
+  font-weight: 400;
   font-family: $font-content;
   color: $font-color-dark;
 }
@@ -36,12 +38,14 @@ h4,
 h5,
 h6 {
   font-family: $font-headers;
+  font-weight: 500;
 }
 
 h1 {
   font-size: $heading1;
   line-height: 1.2;
   word-spacing: -24px;
+  margin: 0;
 }
 
 h2 {
@@ -131,15 +135,77 @@ header {
 }
 
 .navigation li ul a {
-  max-width: 95px;
+  max-width: 125px;
   color: $color-main;
   display: block;
   padding: 10px;
 }
 
+.navigation li ul li {
+  margin: 0;
+  padding: 6px;
+}
 .nalivation li ul a:hover {
   color: $color-social-media;
 }
+
+/* Splash section */
+
+.splash {
+  color: $font-color-light;
+  min-width: 500px;
+  display: flex;
+}
+
+.splash-inner {
+  margin: auto;
+  max-width: 70%;
+  text-align: left;
+}
+
+.page-title span {
+  font-weight: 800;
+  color: $font-color-dark;
+}
+
+/* Buttons styling */
+
+.btn {
+  display: inline-block;
+  min-width: 160px;
+  margin: 24px auto 0 auto;
+  padding: 16px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-width: 2px;
+  border-style: solid;
+  transition: $transition;
+}
+
+.btn:hover {
+  background-position: 0 100%;
+  color: $font-color-light;
+}
+.btn-one {
+  background-image: #ffffff; /* for browsers that do not support gradients */
+  background-image: -webkit-linear-gradient(90deg, #ffffff 50%, transparent 50%);/* Safari 5.1 - 6.0 */
+  background-image: -o-linear-gradient(90deg, #ffffff 50%, transparent 50%); /* Opera 11.1 - 12.0 */
+  background-image: -moz-linear-gradient(90deg, #ffffff 50%, transparent 50%); /* Firefox 3.6 do 15 */
+  background-image: linear-gradient(90deg, #ffffff 50%, transparent 50%); /* standard syntax */
+  background-position: 100% 0;
+  background-size: 300%;
+}
+.btn-one:hover {
+  color: $font-color-dark;
+}
+
+.btn-one {
+  border-color: $font-color-light;
+  color: $font-color-light;
+}
+
 /* Services section */
 
 .services__number {
