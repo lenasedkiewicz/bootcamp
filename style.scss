@@ -254,6 +254,20 @@ header {
   position: absolute;
   bottom: 0;
 }
+
+.btn-blog {
+  border: none;
+  margin: 36px 0;
+  padding: 0;
+  text-align: left;
+  color: $color-accents;
+}
+
+.btn-blog:hover {
+  color: $font-color-dark;
+  font-weight: 700;
+  transition: all 0.2s;
+}
 /* Services section */
 
 .services__number {
@@ -290,5 +304,48 @@ header {
 .blog__content-box {
   flex: 0 0 50%;
   position: relative;
+  @media all and (max-width: 1200px) {
+    flex: 0 0 100%;
+  }
+  margin-bottom: 30px;
 }
 
+.blog__content-box-img {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+
+.blog__content-box-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog__content-box-content {
+  padding: 30px 5px 30px 55%;
+}
+
+div.blog__content-box-img:after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background: $color-social-media;
+  z-index: 2;
+  padding: 30px;
+  transition: $transition;
+}
+
+div.blog__content-box-img:hover:after {
+  top: 0px;
+  left: 0px;
+  transition: $transition;
+}
+
+.blog__content-box-content p:last-of-type {
+  font-weight: 700;
+}
