@@ -510,6 +510,14 @@ ul#social-media li {
 }
 
 @media (max-width: 767px) {
+  h1 {
+    font-size: 3em;
+    word-spacing: 0;
+  }
+  h2 {
+    font-size: 2em;
+    margin: 0;
+  }
   section,
   header {
     padding: 30px 0;
@@ -521,6 +529,11 @@ ul#social-media li {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .splash-inner {
+    margin: 0 5%;
+    width: 90%;
+    max-width: 90vw;
   }
   .blog__content-box-img {
     position: relative;
@@ -535,6 +548,12 @@ ul#social-media li {
   }
   .contact-form__info h4:first-of-type {
     margin-top: 20px;
+  }
+  .navigation li {
+    display: block;
+    margin: 0;
+    position: relative;
+    text-align: center;
   }
 }
 /*# sourceMappingURL=style.css.map */
