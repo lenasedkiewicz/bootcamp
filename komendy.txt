@@ -1,1 +1,1 @@
-komenda do użycia html-validate: npm exec html-validate index.html
+komenda do użycia html-validate: npm exec html-validate *.html
