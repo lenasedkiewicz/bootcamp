@@ -6,20 +6,14 @@
     <meta name="copyright" content="Lena Sędkiewicz" />
     <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
       integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="style.css" />
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -36,5 +30,45 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body></body>
+  <body>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+      <a href="#" class="navbar-brand">Perfect Diet</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#mobile-menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mobile-menu">
+        <ul class="navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+              >Weight loss diets</a
+            >
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">Keto</a>
+              <a href="#" class="dropdown-item">Paleo</a>
+              <a href="#" class="dropdown-item">vegetarian</a>
+              <a href="#" class="dropdown-item">Mediterranean</a>
+              <a href="#" class="dropdown-item">Low Carb</a>
+              <a href="#" class="dropdown-item">No Sugar</a>
+              <a href="#" class="dropdown-item">Raw</a>
+
+            </div>
+          </li>
+          <li><a href="#" class="nav-link">Recovery diets</a></li>
+          <li><a href="#" class="nav-link">Sporting diets</a></li>
+        </ul>
+        <div class="btn-group ml-auto" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary btn-info">Cart<i class="fa-solid fa-basket-shopping"></i></button>
+          <button type="button" class="btn btn-secondary btn-info">Account<i class="fa-solid fa-user"></i></button>
+        </div>
+      </div>
+    </nav>
+  </body>
 </html>
