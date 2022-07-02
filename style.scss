@@ -32,8 +32,8 @@ button i {
 
 /* Blog */
 .blog .card-body {
-    top: 30%;
-    text-align: center;
+  top: 30%;
+  text-align: center;
 }
 
 /* Info section */
@@ -42,8 +42,9 @@ button i {
   font-size: 25px;
 }
 
-/* Contact */
-.contact {
+/* Contact and Footer*/
+.contact,
+.footer {
   background-color: #eff2f5;
 }
 div.social-media i {
@@ -52,5 +53,9 @@ div.social-media i {
 }
 
 .contact span {
+  color: #007bff;
+}
+
+.footer li {
   color: #007bff;
 }
