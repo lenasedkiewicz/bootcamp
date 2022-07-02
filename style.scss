@@ -12,6 +12,11 @@ h5,
 h6 {
   font-family: "Finlandica", sans-serif;
 }
+
+.opacity-background {
+  background-color: rgba(0,0,0,0.7);
+  padding: 30px;
+}
 /* Navbar */
 
 button i {
@@ -25,7 +30,7 @@ button i {
   margin: 0 10px;
 }
 
-/* Slider */
+/* Carousel */
 
 .carousel-inner,
 .carousel-item {
@@ -36,6 +41,11 @@ button i {
   height: 100%;
   object-fit: cover;
 }
+
+.carousel-caption {
+  top:50%;
+}
+
 
 /* Products */
 .card img {
@@ -49,7 +59,12 @@ button i {
   top: 30%;
   text-align: center;
 }
-
+.blog .card-body h5 {
+  color: #fff;
+}
+.blog .opacity-background {
+  width: 90%;
+}
 /* Info section */
 
 .card i {

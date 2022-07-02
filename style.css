@@ -12,6 +12,11 @@ h6 {
   font-family: "Finlandica", sans-serif;
 }
 
+.opacity-background {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+}
+
 /* Navbar */
 button i {
   font-size: 20px;
@@ -24,7 +29,7 @@ button i {
   margin: 0 10px;
 }
 
-/* Slider */
+/* Carousel */
 .carousel-inner,
 .carousel-item {
   height: 100vh;
@@ -34,6 +39,10 @@ button i {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.carousel-caption {
+  top: 50%;
 }
 
 /* Products */
@@ -48,6 +57,14 @@ button i {
 .blog .card-body {
   top: 30%;
   text-align: center;
+}
+
+.blog .card-body h5 {
+  color: #fff;
+}
+
+.blog .opacity-background {
+  width: 90%;
 }
 
 /* Info section */
