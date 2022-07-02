@@ -1,5 +1,5 @@
 /* Navbar */
-i {
+button i {
   font-size: 20px;
   background: #fff;
   width: 40px;
@@ -28,4 +28,17 @@ i {
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* Blog */
+.blog .card-body {
+  top: 30%;
+  text-align: center;
+}
+
+/* Info section */
+.card i {
+  font-size: 25px;
+}
+
+/* Contact *//*# sourceMappingURL=style.css.map */

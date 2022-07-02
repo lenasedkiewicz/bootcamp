@@ -1,6 +1,6 @@
 /* Navbar */
 
-i {
+button i {
   font-size: 20px;
   background: #fff;
   width: 40px;
@@ -29,3 +29,17 @@ i {
   height: 300px;
   object-fit: cover;
 }
+
+/* Blog */
+.blog .card-body {
+    top: 30%;
+    text-align: center;
+}
+
+/* Info section */
+
+.card i {
+  font-size: 25px;
+}
+
+/* Contact */
