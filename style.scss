@@ -55,6 +55,10 @@ button i {
 }
 
 /* Blog */
+
+.blog .row {
+  margin: 0;
+}
 .blog .card-body {
   top: 30%;
   text-align: center;
@@ -65,7 +69,7 @@ button i {
 }
 .blog .opacity-background {
   width: 250px;
-  margin: 0 calc(47% - 125px);
+  margin: 0 calc(48% - 125px);
 }
 /* Info section */
 
