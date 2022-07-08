@@ -22,13 +22,8 @@ h3 {
 }
 
 /* Navbar */
-.splash__logo img {
-  width: 140px;
+.splash__logo {
+  width: 100px;
 }
 
-/* Splash section */
-.splash__inner h1, .splash__inner .btn {
-  text-transform: uppercase;
-}
-
-/*# sourceMappingURL=style.css.map */
+/* Splash section *//*# sourceMappingURL=style.css.map */

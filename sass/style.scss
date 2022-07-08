@@ -27,3 +27,16 @@ h2 {
 h3 {
     font-size: $h3-size;
 }
+
+/* Navbar */
+.splash__logo img {
+    width: 140px;
+}
+
+/* Splash section */
+
+.splash__inner {
+    h1, .btn {
+        text-transform: uppercase;
+    }
+}
