@@ -28,6 +28,9 @@ h2 {
 h3 {
     font-size: $h3-size;
 }
+description {
+    font-size: $desription-size;
+}
 
 /* Navbar */
 .nav__logo img {
@@ -44,6 +47,10 @@ h3 {
 
 /* Services */
 
-.services__description {
-    font-size: $desription-size;
+/* Portfolio */
+
+.portfolio img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
