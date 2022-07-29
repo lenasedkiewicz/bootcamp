@@ -90,19 +90,12 @@
         /* find active product (product that has active class) */
         const activeProduct = document.querySelector(select.all.menuProductsActive);
         // console.log(activeProduct);
+        /* if there is active product and it's not thisProduct.element, remove class active from it */
         if (activeProduct != null && activeProduct != thisProduct.element) {
           activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
         }
         /* toggle active class on thisProduct.element */
         thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);
-        // for (let activeProduct of activeProducts) {
-        //   /* if there is active product and it's not thisProduct.element, remove class active from it */
-        //   if (activeProduct != thisProduct.element ) {
-        //     activeProduct.classList.remove('active');
-        //   } else {
-        //   /* toggle active class on thisProduct.element */
-        //     thisProduct.element.classList.toggle('active');
-        //   }}
       });
     }
   }
