@@ -154,10 +154,8 @@
           const option = param.options[optionId];
           // find pictude associated with addon
           const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
-          console.log(optionImage);
+          // console.log(optionImage);
           // define when element is selected
-          const selected = formData[paramId].includes(optionId);
-          // console.log(optionId, option);
           const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
           // check if there is param with a name of paramId in formData and if it includes optionId
           if(optionSelected) {
@@ -174,8 +172,12 @@
             price -= option.price;
           }
 
-          if((optionImage != null) && selected) {
-            thisProduct.imageWrapper.classList.add(classNames.menuProduct.imageVisible);
+          if(optionImage) {
+            if(optionSelected) {
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+            } else {
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
+            }
           }
         }
         // update calculated price in the HTML
