@@ -62,6 +62,8 @@
       thisProduct.renderInMenu();
       thisProduct.getElements();
       thisProduct.initAccordion();
+      thisProduct.initOrderForm();
+      thisProduct.processOrder();
 
       // console.log('new Product:', thisProduct);
     }
@@ -108,6 +110,14 @@
         /* toggle active class on thisProduct.element */
         thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);
       });
+    }
+    initOrderForm(){
+      const thisProduct = this;
+      // console.log('This is info that initOrderForm method was executed');
+    }
+    processOrder(){
+      const thisProduct = this;
+      // console.log('This is info that processOrder method was executed');
     }
   }
 
