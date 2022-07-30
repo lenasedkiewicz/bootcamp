@@ -92,6 +92,8 @@
       // console.log(thisProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
       // console.log(thisProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
+      console.log(thisProduct.imageWrapper);
     }
     initAccordion(){
       const thisProduct = this;
@@ -158,13 +160,13 @@
             // check if the option is not default
             if(!option.default) {
               // add option price to price variable
-              console.log('opt1');
+              // console.log('opt1');
               price += option.price;
             }
           } else if (option.default) {
             // check if the option is default
             // reduce price variable
-            console.log('opt2');
+            // console.log('opt2');
             price -= option.price;
           }
         }
