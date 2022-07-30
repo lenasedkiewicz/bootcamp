@@ -154,20 +154,18 @@
           const selected = formData[paramId].includes(optionId);
           // console.log(optionId, option);
           // check if there is param with a name of paramId in formData and if it includes optionId
-          if(formData[paramId] && formData[paramId].includes(optionId)) {
+          if(formData[paramId] && selected) {
             // check if the option is not default
-            if((option.default !== true) && (selected === true)) {
+            if(!option.default) {
               // add option price to price variable
               console.log('opt1');
               price += option.price;
             }
-          } else {
-            if ((option.default !== true) && (selected === false)) {
+          } else if (option.default) {
             // check if the option is default
             // reduce price variable
-              console.log('opt2');
-              price -= option.price;
-            }
+            console.log('opt2');
+            price -= option.price;
           }
         }
         // update calculated price in the HTML
