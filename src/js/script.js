@@ -153,6 +153,7 @@
         for(let optionId in param.options) {
           // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
           const option = param.options[optionId];
+          // define when element is selected
           const selected = formData[paramId].includes(optionId);
           // console.log(optionId, option);
           // check if there is param with a name of paramId in formData and if it includes optionId
@@ -163,8 +164,8 @@
               // console.log('opt1');
               price += option.price;
             }
-          } else if (option.default) {
-            // check if the option is default
+          } // check if the option is default
+          else if (option.default) {
             // reduce price variable
             // console.log('opt2');
             price -= option.price;
