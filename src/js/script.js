@@ -160,16 +160,13 @@
               // add option price to price variable
               console.log('opt1');
               price += option.price;
-            } else {
-              if (((option.default === true) && (selected === false)) || ((option.default !== true) && (selected === false)) ) {
-              // check if the option is default
-              // reduce price variable
-                console.log('opt2');
-                price -= option.price;
-              } else {
-                console.log('opt3');
-                price;
-              }
+            }
+          } else {
+            if ((option.default !== true) && (selected === false)) {
+            // check if the option is default
+            // reduce price variable
+              console.log('opt2');
+              price -= option.price;
             }
           }
         }
