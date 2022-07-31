@@ -92,6 +92,8 @@
       // console.log(thisProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
       // console.log(thisProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
+      // console.log(thisProduct.imageWrapper);
     }
     initAccordion(){
       const thisProduct = this;
@@ -146,26 +148,36 @@
         // determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes'... }
         const param = thisProduct.data.params[paramId];
         // console.log(paramId, param);
-
         // for every option in this category
         for(let optionId in param.options) {
           // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
           const option = param.options[optionId];
-          const selected = formData[paramId].includes(optionId);
-          // console.log(optionId, option);
+          // find pictude associated with addon
+          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+          // console.log(optionImage);
+          // define when element is selected
+          const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
           // check if there is param with a name of paramId in formData and if it includes optionId
-          if(formData[paramId] && selected) {
+          if(optionSelected) {
             // check if the option is not default
             if(!option.default) {
               // add option price to price variable
-              console.log('opt1');
+              // console.log('opt1');
               price += option.price;
             }
-          } else if (option.default) {
-            // check if the option is default
+          } // check if the option is default
+          else if (option.default) {
             // reduce price variable
-            console.log('opt2');
+            // console.log('opt2');
             price -= option.price;
+          }
+
+          if(optionImage) {
+            if(optionSelected) {
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+            } else {
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
+            }
           }
         }
         // update calculated price in the HTML
