@@ -197,6 +197,7 @@
     constructor(element){
       const thisWidget = this;
       thisWidget.getElements(element);
+      thisWidget.setValue(thisWidget.input.value);
 
       console.log('AmountWidget:', AmountWidget);
       console.log('constructor arguments:', element);
