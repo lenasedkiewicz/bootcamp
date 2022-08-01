@@ -186,6 +186,15 @@
     }
   }
 
+  class AmountWidget{
+    constructor(element){
+      const thisWidget = this;
+
+      console.log('AmountWidget:', AmountWidget);
+      console.log('constructor arguments:', element);
+    }
+  }
+
   const app = {
     initMenu: function() {
       const thisApp = this;
