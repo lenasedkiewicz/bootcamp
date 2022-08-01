@@ -220,10 +220,11 @@
       if ((thisWidget.value !== newValue) && !isNaN(newValue)) {
         thisWidget.value = newValue;
       }
-      console.log(newValue);
-
-      // thisWidget.value = newValue;
-      thisWidget.input.value = thisWidget.value;
+      // console.log(newValue);
+      if ((newValue >= (settings.amountWidget.defaultMin - 1)) && (newValue <= (settings.amountWidget.defaultMax + 1))) {
+        thisWidget.input.value = thisWidget.value;
+      }
+      console.log(thisWidget.value);
     }
     initActions(){
       const thisWidget = this;
@@ -232,11 +233,15 @@
       });
       thisWidget.linkDecrease.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.setValue(thisWidget.value -= 1);
+        if ((thisWidget.value <= 10) && (thisWidget.value > 0)) {
+          thisWidget.setValue(thisWidget.value -= 1);
+        }
       });
       thisWidget.linkIncrease.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.setValue(thisWidget.value += 1);
+        if ((thisWidget.value < 10) && (thisWidget.value >= 0)) {
+          thisWidget.setValue(thisWidget.value += 1);
+        }
       });
     }
   }
