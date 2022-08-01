@@ -63,6 +63,7 @@
       thisProduct.getElements();
       thisProduct.initAccordion();
       thisProduct.initOrderForm();
+      thisProduct.initAmountWidget();
       thisProduct.processOrder();
 
       // console.log('new Product:', thisProduct);
@@ -134,6 +135,10 @@
         thisProduct.processOrder();
       });
 
+    }
+    initAmountWidget(){
+      const thisProduct = this;
+      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
     }
     processOrder(){
       const thisProduct = this;
