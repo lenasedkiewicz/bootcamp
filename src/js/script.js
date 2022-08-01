@@ -224,6 +224,7 @@
       if ((newValue >= (settings.amountWidget.defaultMin - 1)) && (newValue <= (settings.amountWidget.defaultMax + 1))) {
         thisWidget.input.value = thisWidget.value;
       }
+      thisWidget.announce();
       console.log(thisWidget.value);
     }
     initActions(){
@@ -243,6 +244,12 @@
           thisWidget.setValue(thisWidget.value += 1);
         }
       });
+    }
+    announce(){
+      const thisWidget = this;
+
+      const event = new Event('updated');
+      thisWidget.element.dispatchEvent(event);
     }
   }
 
