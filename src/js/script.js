@@ -216,7 +216,7 @@
       /* To Do : Add validation */
 
       thisWidget.value = newValue;
-      thisWidget.input.value - thisWidget.value;
+      thisWidget.input.value = thisWidget.value;
     }
   }
 
