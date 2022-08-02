@@ -227,11 +227,9 @@
         thisWidget.value = newValue;
       }
       // console.log(newValue);
-      if ((newValue >= (settings.amountWidget.defaultMin - 1)) && (newValue <= (settings.amountWidget.defaultMax + 1))) {
-        thisWidget.input.value = thisWidget.value;
-      }
-      thisWidget.announce();
+      thisWidget.input.value = thisWidget.value;
       // console.log(thisWidget.value);
+      thisWidget.announce();
     }
     initActions(){
       const thisWidget = this;
