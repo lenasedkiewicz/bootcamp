@@ -226,6 +226,11 @@
       if ((thisWidget.value !== newValue) && !isNaN(newValue)) {
         thisWidget.value = newValue;
       }
+      if (thisWidget.value > 10) {
+        thisWidget.value = 10;
+      } else if (thisWidget.value < 0) {
+        thisWidget.value = 0;
+      }
       // console.log(newValue);
       thisWidget.input.value = thisWidget.value;
       // console.log(thisWidget.value);
@@ -238,15 +243,11 @@
       });
       thisWidget.linkDecrease.addEventListener('click', function(event){
         event.preventDefault();
-        if ((thisWidget.value <= 10) && (thisWidget.value > 0)) {
-          thisWidget.setValue(thisWidget.value -= 1);
-        }
+        thisWidget.setValue(thisWidget.value -= 1);
       });
       thisWidget.linkIncrease.addEventListener('click', function(event){
         event.preventDefault();
-        if ((thisWidget.value < 10) && (thisWidget.value >= 0)) {
-          thisWidget.setValue(thisWidget.value += 1);
-        }
+        thisWidget.setValue(thisWidget.value += 1);
       });
     }
     announce(){
