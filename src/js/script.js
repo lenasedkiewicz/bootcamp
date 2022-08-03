@@ -223,14 +223,14 @@
       const newValue = parseInt(value);
 
       /* To Do : Add validation */
-      if ((thisWidget.value !== newValue) && !isNaN(newValue)) {
+      if ((thisWidget.value !== newValue) && !isNaN(newValue) && (newValue <= 10) && (newValue >= 0)) {
         thisWidget.value = newValue;
       }
-      if (thisWidget.value > 10) {
-        thisWidget.value = 10;
-      } else if (thisWidget.value < 0) {
-        thisWidget.value = 0;
-      }
+      // if (thisWidget.value > 10) {
+      //   thisWidget.value = 10;
+      // } else if (thisWidget.value < 0) {
+      //   thisWidget.value = 0;
+      // }
       // console.log(newValue);
       thisWidget.input.value = thisWidget.value;
       // console.log(thisWidget.value);
