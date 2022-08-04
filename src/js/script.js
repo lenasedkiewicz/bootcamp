@@ -229,7 +229,7 @@
     }
     addToCart(){
       const thisProduct = this;
-      app.cart.add(thisProduct.prepareCartProduct);
+      app.cart.add(thisProduct.prepareCartProduct());
     }
     prepareCartProduct(){
       const thisProduct = this;
@@ -244,7 +244,7 @@
       };
       console.log( productSummary);
 
-      return productSummary;
+      return (productSummary);
     }
   }
 
