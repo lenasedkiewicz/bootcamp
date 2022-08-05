@@ -382,13 +382,15 @@
     constructor(menuProduct, element){
       const thisCartProduct = this;
 
-      console.log(menuProduct);
+      thisCartProduct.getElements(element);
 
       thisCartProduct.id = menuProduct.id;
       thisCartProduct.name = menuProduct.data.name;
       thisCartProduct.amount = menuProduct.amountWidget.value;
       thisCartProduct.priceSingle = menuProduct.priceSingle;
       thisCartProduct.price = menuProduct.priceSingle * menuProduct.amountWidget.value;
+    
+      console.log('thisCartProduct:', thisCartProduct);
     }
   }
 
