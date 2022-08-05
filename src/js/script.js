@@ -378,6 +378,20 @@
     }
   }
 
+  class cartProduct{
+    constructor(menuProduct, element){
+      const thisCartProduct = this;
+
+      console.log(menuProduct);
+
+      thisCartProduct.id = menuProduct.id;
+      thisCartProduct.name = menuProduct.data.name;
+      thisCartProduct.amount = menuProduct.amountWidget.value;
+      thisCartProduct.priceSingle = menuProduct.priceSingle;
+      thisCartProduct.price = menuProduct.priceSingle * menuProduct.amountWidget.value;
+    }
+  }
+
   const app = {
     initMenu: function() {
       const thisApp = this;
