@@ -242,13 +242,13 @@
         price: thisProduct.priceSingle * thisProduct.amountWidget.value,
         params: thisProduct.prepareCartProductParams(),
       };
-      console.log( productSummary);
+      // console.log( productSummary);
 
       return productSummary;
     }
     prepareCartProductParams(){
       const thisProduct = this;
-      console.log('prepareCartProductParams method executed');
+      // console.log('prepareCartProductParams method executed');
       // covert form to object structure e.g. { sauce: ['tomato'], toppings: ['olives', 'redPeppers']}
       const formData = utils.serializeFormToObject(thisProduct.form);
       const params = {};
@@ -372,6 +372,9 @@
       const generatedDOM = utils.createDOMFromHTML(generatedHTML);
       /* add element to menu */
       thisCart.dom.productList.appendChild(generatedDOM);
+      /* Push data bout products to array */
+      thisCart.products.push(menuProduct);
+      // console.log('thisCart.products', thisCart.products);
     }
   }
 
