@@ -240,9 +240,9 @@
         amount: thisProduct.amountWidget.value,
         priceSingle: thisProduct.priceSingle,
         price: thisProduct.priceSingle * thisProduct.amountWidget.value,
-        params: {},
+        params: thisProduct.prepareCartProductParams(),
       };
-      // console.log( productSummary);
+      console.log( productSummary);
 
       return productSummary;
     }
@@ -270,7 +270,7 @@
           // define when element is selected
           const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
           if (optionSelected) {
-            console.log('option' + option + 'is selected, yeah!');
+            params[paramId].options[optionId] = option.label;
           }
         }
         return params;
