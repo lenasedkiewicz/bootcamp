@@ -260,7 +260,7 @@
         // create category param in params const eg. params = { ingredients: { name: 'Ingredients', options: {}}}
         params[paramId] = {
           label: param.label,
-          options: {}
+          options: {},
         };
 
         // for every option in this category
@@ -273,8 +273,8 @@
             params[paramId].options[optionId] = option.label;
           }
         }
-        return params;
       }
+      return params;
     }
   }
 
