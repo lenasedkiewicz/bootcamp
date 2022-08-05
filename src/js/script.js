@@ -369,9 +369,9 @@
       /* Generate HTML based on template */
       const generatedHTML = templates.cartProduct(menuProduct);
       /* create element using utils.createElementFromHTML */
-      thisCart.element = utils.createDOMFromHTML(generatedHTML);
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
       /* add element to menu */
-      thisCart.dom.productList.appendChild(thisCart.element);
+      thisCart.dom.productList.appendChild(generatedDOM);
     }
   }
 
