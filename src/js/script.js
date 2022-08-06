@@ -426,6 +426,7 @@
 
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
+      thisCartProduct.initActions();
       // console.log('thisCartProduct:', thisCartProduct);
     }
     getElements(element){
@@ -461,6 +462,19 @@
       });
 
       thisCartProduct.dom.wrapper.dispatchEvent(event);
+    }
+    initActions(){
+      const thisCartProduct = this;
+
+      thisCartProduct.dom.edit.addEventListener('click', function(event){
+        event.preventDefault();
+      });
+      thisCartProduct.dom.remove.addEventListener('click', function(event){
+        event.preventDefault();
+        thisCartProduct.remove();
+        // console.log('Remove method was called');
+      });
+
     }
   }
 
