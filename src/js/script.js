@@ -390,7 +390,7 @@
 
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
-      console.log('thisCartProduct:', thisCartProduct);
+      // console.log('thisCartProduct:', thisCartProduct);
     }
     getElements(element){
       const thisCartProduct = this;
