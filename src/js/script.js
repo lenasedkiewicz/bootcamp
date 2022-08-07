@@ -404,14 +404,16 @@
       }
 
       // console.log('totalNumber: ', totalNumber, 'totalPrice: ', subtotalPrice);
-      if(thisCart.subtotalPrice != 0) {
+      if(subtotalPrice != 0) {
         totalPrice = subtotalPrice + deliveryFee;
+        thisCart.dom.deliveryFee.innerHTML = deliveryFee;
       } else {
         totalPrice = 0;
+        thisCart.dom.deliveryFee.innerHTML = 0;
       }
+      // console.log(subtotalPrice);
 
       thisCart.dom.totalNumber.innerHTML = totalNumber;
-      thisCart.dom.deliveryFee.innerHTML = deliveryFee;
       thisCart.dom.subtotalPrice.innerHTML = subtotalPrice;
       thisCart.dom.totalPrice.innerHTML = totalPrice;
     }
