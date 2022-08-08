@@ -522,7 +522,20 @@
         thisCartProduct.remove();
         // console.log('Remove method was called');
       });
+    }
+    getData(){
+      const thisCartProduct = this;
 
+      const productsDataForOrder = {
+        id: thisCartProduct.id,
+        amount: thisCartProduct.amount,
+        price: thisCartProduct.price,
+        priceSingle: thisCartProduct.priceSingle,
+        name: thisCartProduct.name,
+        params: thisCartProduct.params
+      };
+
+      return productsDataForOrder;
     }
   }
 
