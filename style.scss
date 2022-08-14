@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
 /* Splash */
 
 .splash {
@@ -41,17 +45,17 @@
 }
 
 .splash i {
-    font-size: $font-size-logo;
-    background: $color-main;
+    font-size: 16px;
+    background: #000;
     width: 60px;
     height: 60px;
     line-height: 60px;
-    color: $color-light;
+    color: #fff;
     border-radius: 50%;
 }
 
 .page-title {
-    color: $color-light;
+    color: #fff;
     font-size: 60px;
     margin: 48px 0 0 0;
     position: relative;
@@ -65,14 +69,13 @@
     width: 100px;
     height: 10px;
     transform: translateX(-50%);
-    background: $color-main;
+    background: pink;
 }
 
 .page-subtitle {
-    color: $color-light;
+    color: #fff;
     font-size: 30px;
     font-weight: 400;
     margin: 48px 0 0 0;
     text-transform: uppercase;
 }
-
