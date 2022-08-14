@@ -1,3 +1,6 @@
+/* Variables */
+$color-light: #fff;
+
 /* Global */
 
 *,
@@ -9,6 +12,19 @@
 body {
     margin: 0;
     padding: 0;
+}
+
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+/* Navigation */
+div.top-bar{
+    display: flex;
+    justify-content: space-between;
+a {
+    color: violet;
+}
 }
 /* Splash */
 
