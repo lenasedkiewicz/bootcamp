@@ -22,8 +22,19 @@ body {
 div.top-bar{
     display: flex;
     justify-content: space-between;
+    background-color: #000;
+    .logo {
+        font-size: 24px;
+        span {
+            color: green;
+        }
+    }
 a {
-    color: violet;
+    color: $color-light;
+    text-decoration: none;
+}
+i{ 
+    color: $color-light;
 }
 }
 /* Splash */
@@ -35,7 +46,7 @@ a {
 }
 
 .splash::before {
-    content: "";
+    content: "";  
     background-image: url("https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_960_720.jpg");
     background-size: cover;
     /*test fixed */
