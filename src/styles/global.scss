@@ -3,6 +3,12 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 body {
   margin: 0;
