@@ -1,15 +1,17 @@
 import styles from "./Timer.module.scss";
-import { useState } from "react";
-import Button from "../button/Button";
 
-const Timer = () => {
-  const [clock, setClock] = useState("0");
-  // clock.format('HH:mm:ss.ms');
+const Timer = (props) => {
   return (
     <div className={styles.timer}>
-      <Button>Start</Button>
-      <Button>Stop</Button>
-      <Button>Reset</Button>
+      <span className="digits">
+        {("0" + Math.floor((props.time / 60000) % 60)).slice(-2)}:
+      </span>
+      <span className="digits">
+        {("0" + Math.floor((props.time / 1000) % 60)).slice(-2)}:
+      </span>
+      <span className="digits mili-sec">
+        {("0" + ((props.time / 10) % 100)).slice(-2)}
+      </span>
     </div>
   );
 };
