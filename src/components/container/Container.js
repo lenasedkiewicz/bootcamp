@@ -1,14 +1,10 @@
-import Button from "../button/Button";
 import styles from "./Container.module.scss";
+import Timer from "../timer/Timer";
 
 const Container = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.buttons}>
-        <Button>Start</Button>
-        <Button>Stop</Button>
-        <Button>Reset</Button>
-      </div>
+      <Timer />
     </div>
   );
 };
