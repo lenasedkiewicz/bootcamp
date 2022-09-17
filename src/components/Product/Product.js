@@ -8,8 +8,8 @@ const Product = props => {
       <div className={styles.imageContainer}>
         <img 
           className={styles.image}
-          alt="Kodilla shirt"
-          src={`${process.env.PUBLIC_URL}/images/products/shirt-kodilla--black.jpg`} />
+          alt={props.title}
+          src={`${process.env.PUBLIC_URL}/images/products/shirt-${props.name}--${props.colors[0]}.jpg`} />
       </div>
       <div>
         <header>
