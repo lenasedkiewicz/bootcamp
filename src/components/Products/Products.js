@@ -24,7 +24,10 @@ const Products = () => {
 };
 
 Products.propTypes ={
-
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+  sizes: PropTypes.object.isRequired,
 }
 
 export default Products;
