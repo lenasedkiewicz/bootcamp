@@ -13,8 +13,8 @@ const Product = props => {
       </div>
       <div>
         <header>
-          <h2 className={styles.name}>Kodilla shirt</h2>
-          <span className={styles.price}>Price: 20$</span>
+          <h2 className={styles.name}>{props.title}</h2>
+          <span className={styles.price}>Price: {props.price}$</span>
         </header>
         <form>
           <div className={styles.sizes}>

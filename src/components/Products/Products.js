@@ -9,7 +9,7 @@ const Products = () => {
   return (
     <section>
       {products.map((products) => (
-        <Product
+        <Product title={products.title} price={products.basePrice}
           {...products}
         />
       ))}
@@ -18,7 +18,7 @@ const Products = () => {
 };
 
 Products.propTypes ={
-  
+
 }
 
 export default Products;
