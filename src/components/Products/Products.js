@@ -9,12 +9,7 @@ const Products = () => {
     <section>
       {products.map((products) => (
         <Product
-          key={products.id}
-          name={products.name}
-          title={products.title}
-          colors={products.colors}
-          sizes={products.sizes}
-          basePrice={products.basePrice}
+          {...products}
         />
       ))}
     </section>
