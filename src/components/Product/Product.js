@@ -37,7 +37,7 @@ const Product = (props) => {
             <ul className={styles.choices}>
               {props.sizes.map((size) => (
                 <li key={size.name}>
-                  <button type="button" className={size.name === currentSize ? styles.active : ""}>
+                  <button type="button" className={size.name === currentSize ? styles.active : null}>
                     {size.name}
                   </button>
                 </li>
