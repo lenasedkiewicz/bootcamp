@@ -25,7 +25,7 @@ const Product = props => {
       <div>
         <header>
           <h2 className={styles.name}>{props.title}</h2>
-          <span className={styles.price}>Price: {props.price}$</span>
+          <span className={styles.price}>Price: {props.basePrice}$</span>
         </header>
         <form>
           <div className={styles.sizes}>
@@ -55,8 +55,10 @@ const Product = props => {
 };
 
 Product.propTypes ={
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  basePrice: PropTypes.number.isRequired,
   colors: PropTypes.array.isRequired,
   sizes: PropTypes.array.isRequired,
 }
