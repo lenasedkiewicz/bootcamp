@@ -7,7 +7,7 @@ import { useState } from "react";
 const Product = (props) => {
   const [currentColor, setCurrentColor] = useState(props.colors[0]);
   const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
-  // console.log(currentSize)
+
   // useEffect(() => {
   //  // let products.color= productsData.colors[0]
   //  // setCurrentPrice=[productsData.basePrice + productsData.sizes.additionalPrice[0]]
@@ -37,8 +37,8 @@ const Product = (props) => {
             <h3 className={styles.optionLabel}>Sizes</h3>
             <ul className={styles.choices}>
               {props.sizes.map((size) => (
-                <li>
-                  <button type="button" className={styles.active}>
+                <li key={size.name}>
+                  <button type="button" className={size.name === currentSize && styles.active}>
                     {size.name}
                   </button>
                 </li>
@@ -50,12 +50,9 @@ const Product = (props) => {
             <ul className={styles.choices}>
               {props.colors.map((item) => (
                 <li key={item}>
-                  <button type="button" className={clsx(prepareColorClassName(item), item === {item} && styles.active)} />
+                  <button type="button" className={clsx(prepareColorClassName(item), item === currentColor && styles.active)} />
                 </li>
               ))}
-              {/* <li><button type="button" className={clsx(styles.colorBlack, styles.active)} /></li>
-              <li><button type="button" className={clsx(styles.colorRed)} /></li>
-              <li><button type="button" className={clsx(styles.colorWhite)} /></li> */}
             </ul>
           </div>
           <Button className={styles.button}>
