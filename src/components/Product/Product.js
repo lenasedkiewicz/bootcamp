@@ -44,10 +44,12 @@ const Product = props => {
   )
 };
 
+console.log(typeof 'color');
+
 Product.propTypes ={
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  color: PropTypes.object.isRequired,
+  color: PropTypes.array.isRequired,
   sizes: PropTypes.array.isRequired,
 }
 
