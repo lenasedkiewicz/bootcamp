@@ -13,7 +13,7 @@ const Product = props => {
   //  // let products.color= productsData.colors[0]
   //  // setCurrentPrice=[productsData.basePrice + productsData.sizes.additionalPrice[0]]
   // }, currentColor, currentPrice);
-  
+  console.log(props);
   return (
     <article className={styles.product}>
       <div className={styles.imageContainer}>
@@ -31,10 +31,13 @@ const Product = props => {
           <div className={styles.sizes}>
             <h3 className={styles.optionLabel}>Sizes</h3>
             <ul className={styles.choices}>
-              <li><button type="button" className={styles.active}>S</button></li>
+              {props.colors.map((colors) => (
+                <li><button button type="button" key={props.colors}>{colors}</button></li>
+              ))}
+              {/* <li><button type="button" className={styles.active}>S</button></li>
               <li><button type="button">M</button></li>
               <li><button type="button">L</button></li>
-              <li><button type="button">XL</button></li>
+              <li><button type="button">XL</button></li> */}
             </ul>
           </div>
           <div className={styles.colors}>
