@@ -6,21 +6,21 @@ import { useState } from 'react';
 
 const Product = props => {
 
-  const [currentColor, setCurrentColor] = useState("white");
-  const [currentPrice, setCurrentPrice] = useState("S");
-
+  const [currentColor, setCurrentColor] = useState(props.colors[0]);
+  const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
+  // console.log(currentSize)
   // useEffect(() => {
   //  // let products.color= productsData.colors[0]
   //  // setCurrentPrice=[productsData.basePrice + productsData.sizes.additionalPrice[0]]
   // }, currentColor, currentPrice);
- // const isActive = document
+  
   return (
     <article className={styles.product}>
       <div className={styles.imageContainer}>
         <img 
           className={styles.image}
           alt={props.title}
-          src={`${process.env.PUBLIC_URL}/images/products/shirt-${props.name}--${props.colors[0]}.jpg`} />
+          src={`${process.env.PUBLIC_URL}/images/products/shirt-${props.name}--${currentColor}.jpg`} />
       </div>
       <div>
         <header>
@@ -53,8 +53,6 @@ const Product = props => {
     </article>
   )
 };
-
-console.log(typeof 'color');
 
 Product.propTypes ={
   title: PropTypes.string.isRequired,
