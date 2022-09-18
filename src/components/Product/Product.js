@@ -59,7 +59,7 @@ console.log(typeof 'color');
 Product.propTypes ={
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  color: PropTypes.array.isRequired,
+  colors: PropTypes.array.isRequired,
   sizes: PropTypes.array.isRequired,
 }
 
