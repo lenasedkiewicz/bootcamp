@@ -2,8 +2,18 @@ import styles from './Product.module.scss';
 import clsx from 'clsx';
 import Button from '../Button/Button';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 const Product = props => {
+
+  const [currentColor, setCurrentColor] = useState("white");
+  const [currentPrice, setCurrentPrice] = useState("S");
+
+  // useEffect(() => {
+  //  // let products.color= productsData.colors[0]
+  //  // setCurrentPrice=[productsData.basePrice + productsData.sizes.additionalPrice[0]]
+  // }, currentColor, currentPrice);
+ // const isActive = document
   return (
     <article className={styles.product}>
       <div className={styles.imageContainer}>
