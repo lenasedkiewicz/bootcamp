@@ -17,7 +17,6 @@ const Product = (props) => {
       "color" + color[0].toUpperCase() + color.substr(1).toLowerCase()
     ];
   };
-  console.log(props.sizes);
   return (
     <article className={styles.product}>
       <div className={styles.imageContainer}>
@@ -38,7 +37,7 @@ const Product = (props) => {
             <ul className={styles.choices}>
               {props.sizes.map((size) => (
                 <li key={size.name}>
-                  <button type="button" className={size.name === currentSize && styles.active}>
+                  <button type="button" className={size.name === currentSize ? styles.active : ""}>
                     {size.name}
                   </button>
                 </li>
