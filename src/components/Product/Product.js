@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Button from "../Button/Button";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import productsData from "../../data/products";
+
 
 const Product = (props) => {
   const [currentColor, setCurrentColor] = useState(props.colors[0]);
