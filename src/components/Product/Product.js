@@ -1,13 +1,12 @@
 import styles from "./Product.module.scss";
-import clsx from "clsx";
 import Button from "../Button/Button";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import ProductImage from "../ProductImage/ProductImage";
+import ProductForm from "../ProductForm/ProductForm";
 
 
 const Product = (props) => {
-  const [currentColor, setCurrentColor] = useState(props.colors[0]);
   const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
   const [currentSizePrice, setCurrentSizePrice] = useState(
     props.sizes[0].additionalPrice
@@ -19,19 +18,14 @@ const Product = (props) => {
 
   const shoppingSummary = {
     name: props.title,
-    color: currentColor,
+   // color: currentColor,
     size: currentSize,
     price: getTotalPrice(),
   }
 
-  const prepareColorClassName = (color) => {
-    return styles[
-      "color" + color[0].toUpperCase() + color.substr(1).toLowerCase()
-    ];
-  };
   return (
     <article className={styles.product}>
-      <ProductImage name={props.name} children={currentColor} />
+      <ProductImage name={props.name} children={props.color} />
       <div>
         <header>
           <h2 className={styles.name}>{props.title}</h2>
@@ -56,23 +50,7 @@ const Product = (props) => {
               ))}
             </ul>
           </div>
-          <div className={styles.colors}>
-            <h3 className={styles.optionLabel}>Colors</h3>
-            <ul className={styles.choices}>
-              {props.colors.map((item) => (
-                <li key={item}>
-                  <button
-                    type="button"
-                    onClick={() => setCurrentColor(item)}
-                    className={clsx(
-                      prepareColorClassName(item),
-                      item === currentColor && styles.active
-                    )}
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ProductForm />
           <Button onClick={(e) => {e.preventDefault(); console.log('Summary: ', shoppingSummary)}} className={styles.button}>
             <span className="fa fa-shopping-cart" />
           </Button>
@@ -87,7 +65,6 @@ Product.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   basePrice: PropTypes.number.isRequired,
-  colors: PropTypes.array.isRequired,
   sizes: PropTypes.array.isRequired,
 };
 
