@@ -8,10 +8,6 @@ const Product = (props) => {
   const [currentColor, setCurrentColor] = useState(props.colors[0]);
   const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
 
-  // useEffect(() => {
-  //  // let products.color= productsData.colors[0]
-  //  // setCurrentPrice=[productsData.basePrice + productsData.sizes.additionalPrice[0]]
-  // }, currentColor, currentPrice);
   const prepareColorClassName = (color) => {
     return styles[
       "color" + color[0].toUpperCase() + color.substr(1).toLowerCase()
@@ -37,7 +33,7 @@ const Product = (props) => {
             <ul className={styles.choices}>
               {props.sizes.map((size) => (
                 <li key={size.name}>
-                  <button type="button" className={size.name === currentSize ? styles.active : null}>
+                  <button type="button" onClick={() => setCurrentSize(size.name)} className={size.name === currentSize ? styles.active : null}>
                     {size.name}
                   </button>
                 </li>
@@ -49,7 +45,7 @@ const Product = (props) => {
             <ul className={styles.choices}>
               {props.colors.map((item) => (
                 <li key={item}>
-                  <button type="button" className={clsx(prepareColorClassName(item), item === currentColor && styles.active)} />
+                  <button type="button" onClick={() => setCurrentColor(item)} className={clsx(prepareColorClassName(item), item === currentColor && styles.active)} />
                 </li>
               ))}
             </ul>
