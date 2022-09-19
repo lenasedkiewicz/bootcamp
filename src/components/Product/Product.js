@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Button from "../Button/Button";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import productsData from "../../data/products";
 
 const Product = (props) => {
   const [currentColor, setCurrentColor] = useState(props.colors[0]);
@@ -13,6 +14,13 @@ const Product = (props) => {
 
   function getTotalPrice() {
     return props.basePrice + currentSizePrice;
+  }
+
+  const shoppingSummary = {
+    name: props.title,
+    color: currentColor,
+    size: currentSize,
+    price: getTotalPrice(),
   }
 
   const prepareColorClassName = (color) => {
@@ -70,7 +78,7 @@ const Product = (props) => {
               ))}
             </ul>
           </div>
-          <Button className={styles.button}>
+          <Button onClick={(e) => {e.preventDefault(); console.log('Summary: ', shoppingSummary)}} className={styles.button}>
             <span className="fa fa-shopping-cart" />
           </Button>
         </form>
