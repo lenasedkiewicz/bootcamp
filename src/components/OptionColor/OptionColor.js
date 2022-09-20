@@ -1,11 +1,9 @@
-import styles from "./OptionColor.module.scss"
-import { useState } from "react";
+import styles from "./OptionColor.module.scss";
 import Button from "../Button/Button";
 import clsx from "clsx";
-import PropTypes from "prop-types";
+ import PropTypes from "prop-types";
 
 const OptionColor = (props) => {
-    const [currentColor, setCurrentColor] = useState(props.colors[0]);
     const prepareColorClassName = (color) => {
         return styles[
           "color" + color[0].toUpperCase() + color.substr(1).toLowerCase()
@@ -18,10 +16,10 @@ const OptionColor = (props) => {
               {props.colors.map((item) => (
                 <li key={item}>
                   <Button
-                    onClick={() => setCurrentColor(item)}
+                    onClick={() => props.action(item)}
                     className={clsx(
                       prepareColorClassName(item),
-                      item === currentColor && styles.active
+                      item === props.currentColor && styles.active
                     )}
                   />
                 </li>

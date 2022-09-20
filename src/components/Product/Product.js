@@ -7,6 +7,7 @@ import ProductForm from "../ProductForm/ProductForm";
 
 
 const Product = (props) => {
+  const [currentColor, setCurrentColor] = useState(props.colors[0]);
   const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
   const [currentSizePrice, setCurrentSizePrice] = useState(
     props.sizes[0].additionalPrice
@@ -18,7 +19,7 @@ const Product = (props) => {
 
   const shoppingSummary = {
     name: props.title,
-   // color: currentColor,
+    color: currentColor,
     size: currentSize,
     price: getTotalPrice(),
   }
@@ -36,8 +37,8 @@ const Product = (props) => {
           <div className={styles.sizes}>
             <h3 className={styles.optionLabel}>Sizes</h3>
             <ul className={styles.choices}>
-              {props.sizes.map((size) => (
-                <li key={size.name}>
+              {props.sizes.map((size, index) => (
+                <li key={index}>
                   <button
                     type="button"
                     onClick={() => {setCurrentSize(size.name); setCurrentSizePrice(size.additionalPrice)}}
@@ -49,8 +50,8 @@ const Product = (props) => {
               ))}
             </ul>
           </div>
-          <ProductForm />
-          <Button onClick={(e) => {e.preventDefault(); console.log('Summary: ', shoppingSummary)}} className={styles.button}>
+          <ProductForm colors={props.colors} action={setCurrentColor} currentColor={currentColor}/>
+          <Button type={'submit'} onClick={(e) => {e.preventDefault(); console.log('Summary: ', shoppingSummary)}} className={styles.button}>
             <span className="fa fa-shopping-cart" />
           </Button>
         </form>
