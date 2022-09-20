@@ -22,7 +22,6 @@ const Product = (props) => {
     size: currentSize,
     price: getTotalPrice(),
   }
-
   return (
     <article className={styles.product}>
       <ProductImage name={props.name} children={props.color} />
