@@ -12,11 +12,6 @@ const ProductForm = (props) => {
 
   return (
     <form>
-      <OptionColor
-        colors={props.colors}
-        action={props.actionColor}
-        currentColor={props.currentColor}
-      />
       <OptionSize
         size={props.size}
         action={props.actionSize}
@@ -24,6 +19,11 @@ const ProductForm = (props) => {
         price={props.price}
         actionprice={props.actionPrice}
         sizes={props.sizes}
+      />
+      <OptionColor
+        colors={props.colors}
+        action={props.actionColor}
+        currentColor={props.currentColor}
       />
       <Button type={"submit"} onClick={summary} className={styles.button}>
         <span className="fa fa-shopping-cart" />
