@@ -1,5 +1,4 @@
 import styles from "./Product.module.scss";
-import Button from "../Button/Button";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import ProductImage from "../ProductImage/ProductImage";
@@ -33,7 +32,6 @@ const Product = (props) => {
             Price: {getTotalPrice()}$
           </span>
         </header>
-        <form>
           <div className={styles.sizes}>
             <h3 className={styles.optionLabel}>Sizes</h3>
             <ul className={styles.choices}>
@@ -50,11 +48,7 @@ const Product = (props) => {
               ))}
             </ul>
           </div>
-          <ProductForm colors={props.colors} action={setCurrentColor} currentColor={currentColor}/>
-          <Button type={'submit'} onClick={(e) => {e.preventDefault(); console.log('Summary: ', shoppingSummary)}} className={styles.button}>
-            <span className="fa fa-shopping-cart" />
-          </Button>
-        </form>
+          <ProductForm colors={props.colors} action={setCurrentColor} currentColor={currentColor} shoppingSummary={shoppingSummary} onClick={props.onClick}/>
       </div>
     </article>
   );
