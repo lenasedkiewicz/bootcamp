@@ -26,31 +26,15 @@
     cursor: pointer;
     transition: $transition;
 
-    &.active {
+    &.active{
       opacity: 1;
       transform: scale(1.2);
       background: rgb(47, 53, 66);
     }
 
-    &.colorBlack {
-      background: #000;
-    }
-
-    &.colorRed {
-      background: #e74c3c;
-    }
-
-    &.colorWhite {
-      background: #fff;
-    }
-
-    &.colorBlue {
-      background: #3498db;
-    }
-
-    &.colorGreen {
-      background: #2ecc71;
-    }
+    &:hover {
+      background: rgb(47, 53, 66) !important;
+  }
 
     &:first-child {
       margin-left: 0;

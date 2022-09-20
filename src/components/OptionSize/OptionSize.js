@@ -14,7 +14,7 @@ const OptionSize = (props) => {
                 props.action(size.name);
                 props.actionprice(size.additionalPrice);
               }}
-              className={size.name === props.price ? styles.active : null}
+              className={size.name === props.currentSize ? styles.active : null}
             >
               {size.name}
             </Button>
