@@ -1,7 +1,7 @@
 import styles from "./OptionColor.module.scss";
 import Button from "../Button/Button";
 import clsx from "clsx";
- import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const OptionColor = (props) => {
     const prepareColorClassName = (color) => {
@@ -31,6 +31,8 @@ const OptionColor = (props) => {
 
 OptionColor.propTypes = {
     colors: PropTypes.array.isRequired,
+    action: PropTypes.func.isRequired,
+    currentColor: PropTypes.string.isRequired,
   };
 
 export default OptionColor;
