@@ -41,6 +41,7 @@ const Product = (props) => {
           price={currentSizePrice}
           actionPrice={setCurrentSizePrice}
           sizes={props.sizes}
+          type={props.type}
         />
       </div>
     </article>

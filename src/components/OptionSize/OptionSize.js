@@ -10,6 +10,7 @@ const OptionSize = (props) => {
         {props.sizes.map((size, index) => (
           <li key={index}>
             <Button
+              type={'button'}
               onClick={() => {
                 props.action(size.name);
                 props.actionprice(size.additionalPrice);
