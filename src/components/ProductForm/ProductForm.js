@@ -18,7 +18,7 @@ const ProductForm = (props) => {
         action={props.actionSize}
         currentSize={props.currentSize}
         price={props.price}
-        actionprice={props.actionPrice}
+        actionPrice={props.actionPrice}
         sizes={props.sizes}
       />
       <OptionColor

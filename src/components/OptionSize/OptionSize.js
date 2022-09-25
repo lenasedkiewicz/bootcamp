@@ -13,7 +13,7 @@ const OptionSize = (props) => {
               type={'button'}
               onClick={() => {
                 props.action(size.name);
-                props.actionprice(size.additionalPrice);
+                props.actionPrice(size.additionalPrice);
               }}
               className={size.name === props.currentSize ? styles.active : null}
             >
