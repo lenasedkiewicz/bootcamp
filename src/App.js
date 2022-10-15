@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div>
       <h1>Books App</h1>
-      <BooksList />
+      <BooksList books={books} />
       <BookForm />
     </div>
   );

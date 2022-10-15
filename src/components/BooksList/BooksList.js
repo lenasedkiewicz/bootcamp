@@ -1,6 +1,8 @@
-const BooksList = () => {
+const BooksList = props => {
     return (
-        <h2>BooksList</h2>
+        <ul>
+            {props.books.map(book => <li key={book.id}>{book.title} by {book.author}</li>)}
+        </ul>
     )
 };
 
