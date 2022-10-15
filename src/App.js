@@ -16,7 +16,7 @@ const App = () => {
   const addBook = (newBook) => {
     setBooks([
       ...books,
-      { id: shortid, title: newBook.title, author: newBook.author },
+      { id: shortid(), title: newBook.title, author: newBook.author },
     ]);
   };
 
