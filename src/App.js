@@ -8,10 +8,14 @@ const App = () => {
     { id: 2, title: "the Witcher", author: "Andrzej Sapkowski" },
   ]);
 
+  const removeBook = bookId => {
+    setBooks(books.filter(book => book.id !== bookId))
+  };
+
   return (
     <div>
       <h1>Books App</h1>
-      <BooksList books={books} />
+      <BooksList books={books} removeBook={removeBook} />
       <BookForm />
     </div>
   );
