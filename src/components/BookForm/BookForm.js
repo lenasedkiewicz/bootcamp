@@ -6,7 +6,7 @@ const BookForm = ({ addBook }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addBook({ title: title, author: author });
+    addBook({ title, author });
   };
 
   return (
