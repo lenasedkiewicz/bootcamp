@@ -1,22 +1,25 @@
-import shortid from "shortid";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+// import shortid from "shortid";
 
-const BooksList = ({ books }) => {
+const BooksList = () => {
+  const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
 
-    const removeBook = (bookId) => {
-        setBooks(books.filter((book) => book.id !== bookId));
-      };
-    
-      const addBook = (newBook) => {
-        setBooks([
-          ...books,
-          { id: shortid(), title: newBook.title, author: newBook.author },
-        ]);
-      };
-    return (
-        <ul>
-            {books.map(book => <li key={book.id}>{book.title} by {book.author} <button onClick={() => removeBook(book.id)}>Remove</button></li>)}
-        </ul>
-    )
+  const removeBook = (bookId) => {
+    dispatch({ type: "REMOVE_BOOK", payload: bookId });
+  };
+
+  return (
+    <ul>
+      {books.map((book) => (
+        <li key={book.id}>
+          {book.title} by {book.author}{" "}
+          <button onClick={() => removeBook(book.id)}>Remove</button>
+        </li>
+      ))}
+    </ul>
+  );
 };
 
 export default BooksList;
