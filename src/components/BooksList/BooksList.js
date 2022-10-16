@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-// import shortid from "shortid";
 
 const BooksList = () => {
   const books = useSelector((state) => state.books);

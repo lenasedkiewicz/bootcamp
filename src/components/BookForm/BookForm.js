@@ -4,6 +4,13 @@ const BookForm = ({ addBook }) => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 
+
+      //   const addBook = (newBook) => {
+    //     setBooks([
+    //       ...books,
+    //       { id: shortid(), title: newBook.title, author: newBook.author },
+    //     ]);
+    //   };
   const handleSubmit = (e) => {
     e.preventDefault();
     addBook({ title, author });
