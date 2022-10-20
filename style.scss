@@ -1,5 +1,7 @@
 /* Variables */
 $color-light: #fff;
+$color-accents: #17daa3;
+$color-dark: #000;
 $font-content: "Lato", sans-serif;
 $font-heading: "Raleway", sans-serif;
 /* Global */
@@ -109,5 +111,24 @@ div.top-bar__container {
   color: #fff;
   font-size: 24px;
   font-weight: 400;
-  margin: 24px 0 0 0;
+  margin: 24px 0 48px 0;
+}
+
+.btn {
+    border: 2px solid $color-light;
+    padding: 10px 40px;
+    border-radius: 50px;
+    &:hover {
+        border: 2px solid $color-dark;
+        background-color: $color-dark;
+    }
+}
+
+a.btn {
+    color: $color-light;
+    text-decoration: none;
+    &:hover {
+        color: $color-light;
+        font-weight: 600;
+    }
 }

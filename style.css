@@ -106,5 +106,24 @@ div.top-bar__container {
   color: #fff;
   font-size: 24px;
   font-weight: 400;
-  margin: 24px 0 0 0;
+  margin: 24px 0 48px 0;
+}
+
+.btn {
+  border: 2px solid #fff;
+  padding: 10px 40px;
+  border-radius: 50px;
+}
+.btn:hover {
+  border: 2px solid #000;
+  background-color: #000;
+}
+
+a.btn {
+  color: #fff;
+  text-decoration: none;
+}
+a.btn:hover {
+  color: #fff;
+  font-weight: 600;
 }/*# sourceMappingURL=style.css.map */
