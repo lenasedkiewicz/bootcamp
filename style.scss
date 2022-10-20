@@ -1,6 +1,7 @@
 /* Variables */
 $color-light: #fff;
-
+$font-content: "Lato", sans-serif;
+$font-heading: "Raleway", sans-serif;
 /* Global */
 
 *,
@@ -12,8 +13,16 @@ $color-light: #fff;
 body {
   margin: 0;
   padding: 0;
+  font-family: $font-content, "Arial", sans-serif;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading, "Arial", sans-serif;
+}
 .container {
   max-width: 1140px;
   margin: 0 auto;
@@ -22,7 +31,7 @@ body {
 
 div.top-bar {
   display: inline-block;
- // position: overlay;
+  // position: overlay;
   top: 0;
   left: 0;
   width: 100%;
@@ -39,6 +48,7 @@ div.top-bar {
   }
   .logo a {
     font-size: 24px;
+    text-transform: none;
     span {
       color: green;
     }
@@ -81,6 +91,7 @@ div.top-bar__container {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 40px 0;
+  text-align: center;
 }
 
 .page-title {
@@ -88,12 +99,15 @@ div.top-bar__container {
   font-size: 60px;
   margin: 48px 0 0 0;
   position: relative;
+  font-weight: 300;
+  span {
+    font-weight: 600;
+  }
 }
 
 .page-subtitle {
   color: #fff;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 400;
-  margin: 48px 0 0 0;
-  text-transform: uppercase;
+  margin: 24px 0 0 0;
 }
