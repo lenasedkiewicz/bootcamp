@@ -1,9 +1,9 @@
-import { Navbar } from "react-bootstrap";
+import NavBar from "../NavBar/NavBar";
 
 const Header = () => {
   return (
     <>
-      <Navbar />
+      <NavBar />
       <h1>Header</h1>
     </>
   );
