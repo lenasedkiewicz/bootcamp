@@ -10,7 +10,7 @@ const initialState = {
     },
     {
       id: "2",
-      title: "Snother Article title",
+      title: "Another Article title",
       shortDescription: "Short description is short, because...",
       content: "Main article of the content",
       publishedDate: "02-02-2022",
