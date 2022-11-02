@@ -16,7 +16,7 @@ function RemovePostModal(props) {
         <Button variant="secondary" onClick={props.closeModal}>
           Close
         </Button>
-        <Button variant="danger">Remove</Button>
+        <Button variant="danger" onClick={props.deletePost}>Remove</Button>
       </Modal.Footer>
     </Modal>
   );
