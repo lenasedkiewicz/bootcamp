@@ -3,10 +3,18 @@ import { useParams } from "react-router-dom";
 import { getPostById } from "../../redux/postsRedux";
 import { Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import RemovePostModal from "../../features/RemovePostModal/RemovePostModal";
+import { useState } from "react";
 
 const SinglePost = (props) => {
   const { id } = useParams();
   const postContent = useSelector((state) => getPostById(state, id));
+  const [modal, setModal] = useState(false);
+  const closeModal = () => setModal(false);
+  if (modal) {
+    return <RemovePostModal show={modal} closeModal={closeModal} />;
+  }
+  const openModal = () => setModal(true);
   return (
     <>
       <Row className="justify-content-center">
@@ -18,7 +26,9 @@ const SinglePost = (props) => {
                 Edit
               </Button>
             </Link>
-            <Button variant="outline-danger">Delete</Button>
+            <Button variant="outline-danger" onClick={openModal}>
+              Delete
+            </Button>
           </div>
         </Col>
       </Row>
