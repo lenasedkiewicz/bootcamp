@@ -19,7 +19,7 @@ const AddPostForm = () => {
     dispatch(
       addPost({ title, author, publishedDate, shortDescription, content })
     );
-    navigate(-1);
+    navigate("/");
   };
 
   return (
