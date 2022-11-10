@@ -1,4 +1,4 @@
-import shortid from "shortid";
+import { nanoid } from "nanoid";
 
 //selectors
 export const getAllPosts = (state) => state.posts;
@@ -19,7 +19,7 @@ const postsReducer = (statePart = [], action) => {
     case REMOVE_POST:
       return statePart.filter((post) => post.id !== action.payload);
     case ADD_POST:
-      return [...statePart, {...action.payload, id: shortid() }];
+      return [...statePart, {...action.payload, id: nanoid() }];
     default:
       return statePart;
   }
