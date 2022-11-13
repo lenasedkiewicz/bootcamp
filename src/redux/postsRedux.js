@@ -23,12 +23,9 @@ const postsReducer = (statePart = [], action) => {
     case ADD_POST:
       return [...statePart, { ...action.payload, id: nanoid() }];
     case EDIT_POST:
-      return statePart.map((post) => {
-        console.log('Sowa', post, action.payload);
-        return post.id === action.payload.id
-          ? { ...post, ...action.payload }
-          : post;
-      });
+      return statePart.map((post) =>
+        post.id === action.payload.id ? { ...post, ...action.payload } : post
+      );
     default:
       return statePart;
   }

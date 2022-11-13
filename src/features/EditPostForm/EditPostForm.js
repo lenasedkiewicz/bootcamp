@@ -9,6 +9,7 @@ import { Navigate } from "react-router-dom";
 
 const EditPostForm = () => {
   const { id } = useParams();
+  console.log(id);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -22,22 +23,25 @@ const EditPostForm = () => {
 
   if (!editedPostContent) {
     return <Navigate to="/" />;
-  } else {
-    return (
-      <>
-        <PostForm
-          action={handleSubmit}
-          actionText={"Edit Post"}
-          title={editedPostContent.title}
-          author={editedPostContent.author}
-          publishedDate={dateFormat(editedPostContent.publishedDate, "yyyy-mm-dd")}
-          shortDescription={editedPostContent.shortDescription}
-          content={editedPostContent.content}
-          id={id}
-        />
-      </>
-    );
-  };
+  }
+
+  return (
+    <>
+      <PostForm
+        action={handleSubmit}
+        actionText={"Edit Post"}
+        title={editedPostContent.title}
+        author={editedPostContent.author}
+        publishedDate={dateFormat(
+          editedPostContent.publishedDate,
+          "yyyy-mm-dd"
+        )}
+        shortDescription={editedPostContent.shortDescription}
+        content={editedPostContent.content}
+        id={id}
+      />
+    </>
+  );
 };
 
 export default EditPostForm;
