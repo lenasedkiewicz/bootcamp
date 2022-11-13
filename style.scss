@@ -31,7 +31,7 @@ h6 {
 }
 /* Navigation */
 
-div.top-bar {
+.top-bar {
   display: inline-block;
   position: relative;
   top: 0;
@@ -55,63 +55,63 @@ div.top-bar {
       color: green;
     }
   }
+  .top-bar__container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-div.top-bar__container {
-  max-width: 1140px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 /* Splash */
 
 .splash {
   height: 100vh;
   position: relative;
   background-color: #000;
-}
 
-.splash::before {
-  content: "";
-  background-image: url("https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_960_720.jpg");
-  background-size: cover;
-  background-position: center center;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.75;
-}
-
-.splash-inner {
-  position: absolute;
-  max-width: 900px;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 40px 0;
-  text-align: center;
-}
-
-.page-title {
-  color: #fff;
-  font-size: 60px;
-  margin: 48px 0 0 0;
-  position: relative;
-  font-weight: 300;
-  span {
-    font-weight: 600;
+  &:before {
+    content: "";
+    background-image: url("https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_960_720.jpg");
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
   }
-}
 
-.page-subtitle {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 400;
-  margin: 24px 0 48px 0;
+  .splash-inner {
+    position: absolute;
+    max-width: 900px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px 0;
+    text-align: center;
+
+    .page-title {
+      color: #fff;
+      font-size: 60px;
+      margin: 48px 0 0 0;
+      position: relative;
+      font-weight: 300;
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .page-subtitle {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 400;
+      margin: 24px 0 48px 0;
+    }
+  }
 }
 
 .btn {

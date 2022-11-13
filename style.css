@@ -27,7 +27,7 @@ h6 {
 }
 
 /* Navigation */
-div.top-bar {
+.top-bar {
   display: inline-block;
   position: relative;
   top: 0;
@@ -35,25 +35,24 @@ div.top-bar {
   width: 100%;
   padding-top: 57px;
 }
-div.top-bar a {
+.top-bar a {
   font-size: 14px;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   padding: 15px;
 }
-div.top-bar i {
+.top-bar i {
   color: #fff;
 }
-div.top-bar .logo a {
+.top-bar .logo a {
   font-size: 24px;
   text-transform: none;
 }
-div.top-bar .logo a span {
+.top-bar .logo a span {
   color: green;
 }
-
-div.top-bar__container {
+.top-bar .top-bar__container {
   max-width: 1140px;
   margin: 0 auto;
   display: flex;
@@ -67,8 +66,7 @@ div.top-bar__container {
   position: relative;
   background-color: #000;
 }
-
-.splash::before {
+.splash:before {
   content: "";
   background-image: url("https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_960_720.jpg");
   background-size: cover;
@@ -80,8 +78,7 @@ div.top-bar__container {
   left: 0px;
   opacity: 0.75;
 }
-
-.splash-inner {
+.splash .splash-inner {
   position: absolute;
   max-width: 900px;
   width: 100%;
@@ -91,19 +88,17 @@ div.top-bar__container {
   padding: 40px 0;
   text-align: center;
 }
-
-.page-title {
+.splash .splash-inner .page-title {
   color: #fff;
   font-size: 60px;
   margin: 48px 0 0 0;
   position: relative;
   font-weight: 300;
 }
-.page-title span {
+.splash .splash-inner .page-title span {
   font-weight: 600;
 }
-
-.page-subtitle {
+.splash .splash-inner .page-subtitle {
   color: #fff;
   font-size: 24px;
   font-weight: 400;
