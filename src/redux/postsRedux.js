@@ -14,16 +14,21 @@ const EDIT_POST = createActionName("EDIT_POST");
 // action creators
 export const removePost = (payload) => ({ type: REMOVE_POST, payload });
 export const addPost = (payload) => ({ type: ADD_POST, payload });
-export const editPost = (payload) => ({ type: EDIT_POST, payload});
+export const editPost = (payload) => ({ type: EDIT_POST, payload });
 
 const postsReducer = (statePart = [], action) => {
   switch (action.type) {
     case REMOVE_POST:
       return statePart.filter((post) => post.id !== action.payload);
     case ADD_POST:
-      return [...statePart, {...action.payload, id: nanoid() }];
-      case EDIT_POST:
-     return statePart.map(post => (post.id === action.payload.id ? { ...post, ...action.payload } : post));
+      return [...statePart, { ...action.payload, id: nanoid() }];
+    case EDIT_POST:
+      return statePart.map((post) => {
+        console.log('Sowa', post, action.payload);
+        return post.id === action.payload.id
+          ? { ...post, ...action.payload }
+          : post;
+      });
     default:
       return statePart;
   }
