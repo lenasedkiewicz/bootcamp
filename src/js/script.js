@@ -12,4 +12,10 @@
       bookTemplate: "#template-book",
     },
   };
+
+  const templates = {
+    bookCard: Handlebars.compile(
+      document.querySelector(select.templateOf.bookTemplate).innerHTML
+    ),
+  };
 }
