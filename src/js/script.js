@@ -7,9 +7,9 @@
     books: {
       booksPanel: ".books-panel",
       bookList: ".books-list",
-      bookImageLink: '#data-id',
-      cardOfBook: '.book',
-      bookImage: '.book__image',
+      bookImageLink: "#data-id",
+      cardOfBook: ".book",
+      bookImage: ".book__image",
     },
     templateOf: {
       bookTemplate: "#template-book",
@@ -24,7 +24,6 @@
 
   const renderBookList = function () {
     for (const book of dataSource.books) {
-
       //generate HTML based on Handlebars template
       const generatedHTML = templates.bookCard(book);
 
@@ -38,6 +37,21 @@
       listOfBooks.appendChild(singleBook);
     }
   };
-
   renderBookList();
+
+  const initActionFavoriteBooks = function () {
+    const books = document.querySelectorAll(select.books.bookImage);
+
+    const favoriteBooks = [];
+
+    for (const book of books) {
+      book.addEventListener("dblclick", function (event) {
+        event.preventDefault();
+        book.classList.add("favorite");
+        const bookId = book.getAttribute(select.books.bookImageLink);
+        favoriteBooks.push(bookId);
+      });
+    }
+  };
+  initActionFavoriteBooks();
 }
