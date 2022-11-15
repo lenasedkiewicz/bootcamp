@@ -7,6 +7,9 @@
     books: {
       booksPanel: ".books-panel",
       bookList: ".books-list",
+      bookImageLink: '#data-id',
+      cardOfBook: '.book',
+      bookImage: '.book__image',
     },
     templateOf: {
       bookTemplate: "#template-book",
