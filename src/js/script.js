@@ -7,7 +7,7 @@
     books: {
       booksPanel: ".books-panel",
       bookList: ".books-list",
-      bookImageLink: "#data-id",
+      bookImageId: "data-id",
       cardOfBook: ".book",
       bookImage: ".book__image",
     },
@@ -47,9 +47,17 @@
     for (const book of books) {
       book.addEventListener("dblclick", function (event) {
         event.preventDefault();
-        book.classList.add("favorite");
-        const bookId = book.getAttribute(select.books.bookImageLink);
-        favoriteBooks.push(bookId);
+        const bookId = book.getAttribute(select.books.bookImageId);
+        let favoriteIndex = favoriteBooks.indexOf(bookId);
+
+        if(favoriteIndex == -1){
+          book.classList.add('favorite');
+
+          favoriteBooks.push(bookId);
+        } else {
+          book.classList.remove('favorite');
+          favoriteBooks.splice(favoriteIndex, 1);
+        }
       });
     }
   };
