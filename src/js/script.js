@@ -12,12 +12,16 @@
       bookList: ".books-list",
       bookImageId: "data-id",
       cardOfBook: ".book",
-      bookImage: ".book__image",
+      bookImage: "book__image",
       rating: ".book__rating__fill",
     },
     templateOf: {
       bookTemplate: "#template-book",
     },
+    class: {
+      favorite: "favorite",
+      hidden: "hidden",
+    }
   };
 
   const templates = {
@@ -58,7 +62,7 @@
         //add book to list
         listOfBooks.appendChild(singleBook);
       }
-    };
+    }
 
     getElements() {
       const thisBook = this;
@@ -72,8 +76,24 @@
     initActions() {
       const thisBook = this;
 
-      thisBook.list.addEventListener("click", function (e) {
+      thisBook.booksPanel.addEventListener("click", function (e) {
         e.preventDefault();
+      });
+
+      thisBook.booksPanel.addEventListener("dblclick", function (e) {
+        e.preventDefault();
+
+        const book = e.target.offsetParent;
+        if (book.classList.contains(select.books.bookImage)) {
+          book.classList.toggle(select.class.favorite);
+          const bookImageId = book.getAttribute(select.books.bookImageId);
+          if (!favoriteBooks.includes(bookImageId)) {
+            favoriteBooks.push(bookImageId);
+          } else {
+            const indexId = favoriteBooks.indexOf(bookImageId);
+            favoriteBooks.splice(indexId, 1);
+          }
+         }
       });
     }
   }
@@ -89,32 +109,6 @@
       return "linear-gradient(to bottom, #ff0084 0%,#ff0084 100%)";
     }
   };
-
-
-  const initActionFavoriteBooks = function () {
-    const booksContainer = document.querySelector(select.books.booksPanel);
-
-    booksContainer.addEventListener("dblclick", function (event) {
-      event.preventDefault();
-
-      const bookId = event.target.offsetParent.getAttribute(
-        select.books.bookImageId
-      );
-      const favoriteIndex = favoriteBooks.indexOf(bookId);
-
-      if (
-        !favoriteBooks.includes(bookId) &&
-        event.target.offsetParent.classList.contains("book__image")
-      ) {
-        event.target.offsetParent.classList.add("favorite");
-        favoriteBooks.push(bookId);
-      } else if (favoriteBooks.includes(bookId)) {
-        event.target.offsetParent.classList.remove("favorite");
-        favoriteBooks.splice(favoriteIndex, 1);
-      }
-    });
-  };
-  initActionFavoriteBooks();
 
   const filtering = function () {
     const filteringForm = document.querySelector(select.form);
