@@ -26,6 +26,9 @@
     ),
   };
 
+  const favoriteBooks = [];
+  const filters = [];
+
   const determineRatingBgc = function (rating) {
     if (rating < 6) {
       return "linear-gradient(to bottom,  #fefcea 0%, #f1da36 100%)";
@@ -60,7 +63,6 @@
   const initActionFavoriteBooks = function () {
     const booksContainer = document.querySelector(select.books.booksPanel);
 
-    const favoriteBooks = [];
     booksContainer.addEventListener("click", function (event) {
       event.preventDefault();
     });
@@ -88,8 +90,6 @@
 
   const filtering = function () {
     const filteringForm = document.querySelector(select.form);
-
-    const filters = [];
 
     filteringForm.addEventListener("click", function (event) {
       if (event.target.type == "checkbox") {
