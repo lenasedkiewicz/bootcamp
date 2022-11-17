@@ -43,7 +43,9 @@
     const booksContainer = document.querySelector(select.books.booksPanel);
 
     const favoriteBooks = [];
-
+    booksContainer.addEventListener('click', function(event) {
+      event.preventDefault();
+    });
     booksContainer.addEventListener('dblclick', function(event){
       event.preventDefault();
 
