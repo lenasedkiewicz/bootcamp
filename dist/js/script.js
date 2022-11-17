@@ -41,6 +41,7 @@
   const renderBookList = function () {
     for (const book of dataSource.books) {
       book.ratingBgc = determineRatingBgc(book.rating);
+      book.ratingWidth = book.rating * 10;
       //generate HTML based on Handlebars template
       const generatedHTML = templates.bookCard(book);
 
