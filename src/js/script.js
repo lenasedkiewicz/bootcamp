@@ -29,6 +29,36 @@
   const favoriteBooks = [];
   const filters = [];
 
+  class BooksList {
+    constructor(id) {
+      const thisBook = this;
+
+      thisBook.id = id;
+      thisBook.initData();
+    }
+
+    initData() {
+      const thisBook = this;
+      thisBook.data = dataSource.books;
+
+      for (const book of dataSource.books) {
+        book.ratingBgc = determineRatingBgc(book.rating);
+        book.ratingWidth = book.rating * 10;
+        //generate HTML based on Handlebars template
+        const generatedHTML = templates.bookCard(book);
+
+        //create book object using utils
+        const singleBook = utils.createDOMFromHTML(generatedHTML);
+
+        //find books-list class in DOM
+        const listOfBooks = document.querySelector(select.books.bookList);
+
+        //add book to list
+        listOfBooks.appendChild(singleBook);
+      }
+    };
+  }
+
   const determineRatingBgc = function (rating) {
     if (rating < 6) {
       return "linear-gradient(to bottom,  #fefcea 0%, #f1da36 100%)";
@@ -41,24 +71,6 @@
     }
   };
 
-  const renderBookList = function () {
-    for (const book of dataSource.books) {
-      book.ratingBgc = determineRatingBgc(book.rating);
-      book.ratingWidth = book.rating * 10;
-      //generate HTML based on Handlebars template
-      const generatedHTML = templates.bookCard(book);
-
-      //create book object using utils
-      const singleBook = utils.createDOMFromHTML(generatedHTML);
-
-      //find books-list class in DOM
-      const listOfBooks = document.querySelector(select.books.bookList);
-
-      //add book to list
-      listOfBooks.appendChild(singleBook);
-    }
-  };
-  renderBookList();
 
   const initActionFavoriteBooks = function () {
     const booksContainer = document.querySelector(select.books.booksPanel);
@@ -128,4 +140,6 @@
     };
   };
   filtering();
+
+  const app = new BooksList();
 }
