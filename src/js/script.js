@@ -57,6 +57,14 @@
         listOfBooks.appendChild(singleBook);
       }
     };
+
+    getElements() {
+      const thisBook = this;
+
+      thisBook.container = document.querySelector(select.books.bookList);
+      thisBook.images = thisBook.container.querySelectorAll(select.books.bookImage);
+      thisBook.filters = document.querySelector(select.form.filters);
+    }
   }
 
   const determineRatingBgc = function (rating) {
