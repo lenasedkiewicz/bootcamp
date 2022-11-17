@@ -35,6 +35,8 @@
 
       thisBook.id = id;
       thisBook.initData();
+      thisBook.getElements();
+      thisBook.initActions();
     }
 
     initData() {
@@ -61,9 +63,18 @@
     getElements() {
       const thisBook = this;
 
-      thisBook.container = document.querySelector(select.books.bookList);
-      thisBook.images = thisBook.container.querySelectorAll(select.books.bookImage);
+      thisBook.list = document.querySelector(select.books.bookList);
+      thisBook.image = document.querySelectorAll(select.books.bookImage);
       thisBook.filters = document.querySelector(select.form.filters);
+      thisBook.booksPanel = document.querySelector(select.books.booksPanel);
+    }
+
+    initActions() {
+      const thisBook = this;
+
+      thisBook.list.addEventListener("click", function (e) {
+        e.preventDefault();
+      });
     }
   }
 
@@ -83,9 +94,6 @@
   const initActionFavoriteBooks = function () {
     const booksContainer = document.querySelector(select.books.booksPanel);
 
-    booksContainer.addEventListener("click", function (event) {
-      event.preventDefault();
-    });
     booksContainer.addEventListener("dblclick", function (event) {
       event.preventDefault();
 
