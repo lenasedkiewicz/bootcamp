@@ -4,7 +4,7 @@
   ("use strict");
 
   const select = {
-    form: "filters",
+    form: ".filters",
     inputCheckbox: 'input[type="checkbox"]',
     inputName: 'input[name="filter"]',
     books: {
@@ -42,6 +42,7 @@
       thisBook.getElements();
       thisBook.initActions();
       thisBook.filterBooks();
+      thisBook.determineRatingBgc();
     }
 
     initData() {
@@ -49,7 +50,8 @@
       thisBook.data = dataSource.books;
 
       for (const book of dataSource.books) {
-        book.ratingBgc = determineRatingBgc(book.rating);
+        const thisBook = this;
+        book.ratingBgc = thisBook.determineRatingBgc(book.rating);
         book.ratingWidth = book.rating * 10;
         //generate HTML based on Handlebars template
         const generatedHTML = templates.bookCard(book);
@@ -99,7 +101,6 @@
 
       thisBook.filters.addEventListener("click", function (e) {
         const filter = e.target;
-        console.log('dupa');
         if (
           filter.getAttribute("type") === "checkbox" &&
           filter.getAttribute("name") === "filter"
@@ -136,20 +137,19 @@
         }
       }
     }
+
+    determineRatingBgc(rating) {
+      if (rating < 6) {
+        return "linear-gradient(to bottom,  #fefcea 0%, #f1da36 100%";
+      } else if (rating > 6 && rating <= 8) {
+        return "linear-gradient(to bottom, #b4df5b 0%,#b4df5b 100%)";
+      } else if (rating > 8 && rating <= 9) {
+        return "linear-gradient(to bottom, #299a0b 0%, #299a0b 100%)";
+      } else if (rating > 9) {
+        return "linear-gradient(to bottom, #ff0084 0%,#ff0084 100%)";
+      }
+    }
   }
 
-  const determineRatingBgc = function (rating) {
-    if (rating < 6) {
-      return "linear-gradient(to bottom,  #fefcea 0%, #f1da36 100%)";
-    } else if (rating > 6 && rating <= 8) {
-      return "linear-gradient(to bottom, #b4df5b 0%,#b4df5b 100%)";
-    } else if (rating > 8 && rating <= 9) {
-      return "linear-gradient(to bottom, #299a0b 0%, #299a0b 100%)";
-    } else if (rating > 9) {
-      return "linear-gradient(to bottom, #ff0084 0%,#ff0084 100%)";
-    }
-  };
-
   const app = new BooksList();
-  console.log('dupa2');
 }
