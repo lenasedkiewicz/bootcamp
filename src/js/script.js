@@ -42,6 +42,7 @@
       thisBook.getElements();
       thisBook.initActions();
       thisBook.filterBooks();
+      thisBook.determineRatingBgc();
     }
 
     initData() {
@@ -135,9 +136,8 @@
         }
       }
     }
-  }
-
-  const determineRatingBgc = function (rating) {
+    
+    determineRatingBgc(rating) {
     if (rating < 6) {
       return "linear-gradient(to bottom,  #fefcea 0%, #f1da36 100%)";
     } else if (rating > 6 && rating <= 8) {
@@ -148,6 +148,9 @@
       return "linear-gradient(to bottom, #ff0084 0%,#ff0084 100%)";
     }
   };
+  }
+
+  
 
   const app = new BooksList();
 }
