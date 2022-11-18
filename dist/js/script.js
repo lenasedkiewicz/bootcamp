@@ -4,7 +4,7 @@
   ("use strict");
 
   const select = {
-    form: ".filters",
+    form: "filters",
     inputCheckbox: 'input[type="checkbox"]',
     inputName: 'input[name="filter"]',
     books: {
@@ -21,7 +21,7 @@
     class: {
       favorite: "favorite",
       hidden: "hidden",
-    }
+    },
   };
 
   const templates = {
@@ -41,6 +41,7 @@
       thisBook.initData();
       thisBook.getElements();
       thisBook.initActions();
+      thisBook.filterBooks();
     }
 
     initData() {
@@ -69,7 +70,7 @@
 
       thisBook.list = document.querySelector(select.books.bookList);
       thisBook.image = document.querySelectorAll(select.books.bookImage);
-      thisBook.filters = document.querySelector(select.form.filters);
+      thisBook.filters = document.querySelector(select.form);
       thisBook.booksPanel = document.querySelector(select.books.booksPanel);
     }
 
@@ -93,8 +94,47 @@
             const indexId = favoriteBooks.indexOf(bookImageId);
             favoriteBooks.splice(indexId, 1);
           }
-         }
+        }
       });
+
+      thisBook.filters.addEventListener("click", function (e) {
+        const filter = e.target;
+        console.log('dupa');
+        if (
+          filter.getAttribute("type") === "checkbox" &&
+          filter.getAttribute("name") === "filter"
+        ) {
+          if (filter.checked) {
+            filters.push(filter.value);
+            thisBook.filterBooks();
+          } else if (!filter.checked) {
+            const filterId = filters.indexOf(filter.value);
+            filters.splice(filterId, 1);
+            thisBook.filterBooks();
+          }
+        }
+      });
+    }
+
+    filterBooks() {
+      const books = dataSource.books;
+      const bookId = [];
+
+      for (let book of books) {
+        for (const filter of filters) {
+          if (!book.details[filter]) {
+            bookId.push(book.id);
+          }
+        }
+
+        if (bookId.includes(book.id)) {
+          const bookImg = document.querySelector('[data-id="' + book.id + '"]');
+          bookImg.classList.add(select.class.hidden);
+        } else if (!bookId.includes(book.id)) {
+          const bookImg = document.querySelector('[data-id="' + book.id + '"]');
+          bookImg.classList.remove(select.class.hidden);
+        }
+      }
     }
   }
 
@@ -110,46 +150,6 @@
     }
   };
 
-  const filtering = function () {
-    const filteringForm = document.querySelector(select.form);
-
-    filteringForm.addEventListener("click", function (event) {
-      if (event.target.type == "checkbox") {
-        const value = event.target.value;
-        const isChecked = event.target.checked;
-
-        if (isChecked) {
-          filters.push(value);
-        } else {
-          filters.splice(filters.indexOf(value), 1);
-        }
-      }
-      filteringBooks();
-    });
-
-    const filteringBooks = function () {
-      for (let book of dataSource.books) {
-        const bookId = book.id;
-        const selected = document.querySelector(
-          select.books.bookImage + '[data-id = "' + bookId + '"]'
-        );
-        let isActive = true;
-
-        for (let filter of filters) {
-          if (!book.details[filter]) {
-            isActive = false;
-            break;
-          }
-        }
-        if (!isActive) {
-          selected.classList.add("hidden");
-        } else {
-          selected.classList.remove("hidden");
-        }
-      }
-    };
-  };
-  filtering();
-
   const app = new BooksList();
+  console.log('dupa2');
 }
