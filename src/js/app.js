@@ -1,3 +1,7 @@
+import { settings, select } from './settings.js';
+import Product from './Components/Product.js';
+import Cart from './Components/Cart.js';
+
 // const { stringify } = require('postcss');
 
 const app = {
@@ -34,6 +38,11 @@ const app = {
 
     const cartElem = document.querySelector(select.containerOf.cart);
     thisApp.cart = new Cart(cartElem);
+
+    thisApp.productList = document.querySelector(select.containerOf.menu);
+    thisApp.productList.addEventListener('add-to-cart', function(event){
+      app.cart.add(event.detail.product);
+    });
   },
   init: function(){
     const thisApp = this;

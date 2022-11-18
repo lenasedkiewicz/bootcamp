@@ -1,4 +1,4 @@
-const select = {
+export const select = {
   templateOf: {
     menuProduct: '#template-menu-product',
     cartProduct: '#template-cart-product',
@@ -47,33 +47,33 @@ const select = {
   },
 };
 
-const classNames = {
-menuProduct: {
+export const classNames = {
+  menuProduct: {
     wrapperActive: 'active',
     imageVisible: 'active',
-},
-cart: {
+  },
+  cart: {
     wrapperActive: 'active',
-},
+  },
 };
 
-const settings = {
-amountWidget: {
+export const settings = {
+  amountWidget: {
     defaultValue: 1,
     defaultMin: 1,
     defaultMax: 9,
-},
-cart: {
+  },
+  cart: {
     defaultDeliveryFee: 20,
-},
-db: {
+  },
+  db: {
     url: '//localhost:3131',
     products: 'products',
     orders: 'orders',
-},
+  },
 };
 
-const templates = {
-menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
-cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
+export const templates = {
+  menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
+  cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
 };
