@@ -1,33 +1,33 @@
 const select = {
-templateOf: {
+  templateOf: {
     menuProduct: '#template-menu-product',
     cartProduct: '#template-cart-product',
-},
-containerOf: {
+  },
+  containerOf: {
     menu: '#product-list',
     cart: '#cart',
-},
-all: {
+  },
+  all: {
     menuProducts: '#product-list > .product',
     menuProductsActive: '#product-list > .product.active',
     formInputs: 'input, select',
-},
-menuProduct: {
+  },
+  menuProduct: {
     clickable: '.product__header',
     form: '.product__order',
     priceElem: '.product__total-price .price',
     imageWrapper: '.product__images',
     amountWidget: '.widget-amount',
     cartButton: '[href="#add-to-cart"]',
-},
-widgets: {
+  },
+  widgets: {
     amount: {
-    input: 'input.amount',
-    linkDecrease: 'a[href="#less"]',
-    linkIncrease: 'a[href="#more"]',
+      input: 'input.amount',
+      linkDecrease: 'a[href="#less"]',
+      linkIncrease: 'a[href="#more"]',
     },
-},
-cart: {
+  },
+  cart: {
     productList: '.cart__order-summary',
     toggleTrigger: '.cart__summary',
     totalNumber: `.cart__total-number`,
@@ -38,13 +38,13 @@ cart: {
     formSubmit: '.cart__order [type="submit"]',
     phone: '[name="phone"]',
     address: '[name="address"]',
-},
-cartProduct: {
+  },
+  cartProduct: {
     amountWidget: '.widget-amount',
     price: '.cart__product-price',
     edit: '[href="#edit"]',
     remove: '[href="#remove"]',
-},
+  },
 };
 
 const classNames = {
