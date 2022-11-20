@@ -1,10 +1,36 @@
-import { settings, select } from './settings.js';
+import { settings, select, classNames } from './settings.js';
 import Product from './Components/Product.js';
 import Cart from './Components/Cart.js';
 
 // const { stringify } = require('postcss');
 
 const app = {
+  initPages: function(){
+    const thisApp = this;
+
+    thisApp.pages = document.querySelector(select.containerOf.pages).children;
+
+    thisApp.activatePage(thisApp.pages[0].id);
+  },
+
+  activatePage: function(pageId){
+    const thisApp = this;
+
+    /* add class "active" to matching pages, remove from non-matching pages */
+    for (let page of thisApp.pages){
+
+      // if (page.id == pageId){
+      //   page.classList.add(classNames.pages.active);
+      // } else {
+      //   page.classList.remove(classNames.pages.active);
+      // }
+      
+      page.classList.toggle(classNames.pages.active, page.id == pageId);
+    }
+    /* add class "active" to matching links, remove from non-matching links */
+
+  },
+
   initMenu: function() {
     const thisApp = this;
 
@@ -53,6 +79,7 @@ const app = {
     // console.log('settings:', settings);
     // console.log('templates:', templates);
 
+    thisApp.initPages();
     thisApp.initData();
     thisApp.initCart();
   },
