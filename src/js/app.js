@@ -1,6 +1,7 @@
 import { settings, select, classNames } from './settings.js';
 import Product from './Components/Product.js';
 import Cart from './Components/Cart.js';
+import Booking from './Components/Booking.js';
 
 // const { stringify } = require('postcss');
 
@@ -35,7 +36,13 @@ const app = {
       });
     }
   },
+  initBooking: function(){
+    const thisApp = this;
+    const bookingElement  = document.querySelector(select.containerOf.booking);
 
+    thisApp.booking = new Booking(bookingElement);
+
+  },
   activatePage: function(pageId){
     const thisApp = this;
 
@@ -89,6 +96,7 @@ const app = {
     const thisApp = this;
 
     thisApp.initPages();
+    thisApp.initBooking();
     thisApp.initData();
     thisApp.initCart();
   },
