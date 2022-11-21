@@ -16,7 +16,6 @@ class Product{
     thisProduct.initAmountWidget();
     thisProduct.processOrder();
 
-    // console.log('new Product:', thisProduct);
   }
   renderInMenu(){
     const thisProduct = this;
@@ -34,19 +33,12 @@ class Product{
     const thisProduct = this;
 
     thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
-    // console.log(thisProduct.accordionTrigger);
     thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
-    // console.log(thisProduct.form);
     thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
-    // console.log(thisProduct.formInputs);
     thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
-    // console.log(thisProduct.cartButton);
     thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
-    // console.log(thisProduct.priceElem);
     thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
-    // console.log(thisProduct.imageWrapper);
     thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
-    // console.log(thisProduct.amountWidgetElem);
   }
   initAccordion(){
     const thisProduct = this;
@@ -57,7 +49,6 @@ class Product{
       event.preventDefault();
       /* find active product (product that has active class) */
       const activeProduct = document.querySelector(select.all.menuProductsActive);
-      // console.log(activeProduct);
       /* if there is active product and it's not thisProduct.element, remove class active from it */
       if (activeProduct != null && activeProduct != thisProduct.element) {
         activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
@@ -68,7 +59,6 @@ class Product{
   }
   initOrderForm(){
     const thisProduct = this;
-    // console.log('initOrderForm method executed');
     thisProduct.form.addEventListener('submit', function(event){
       event.preventDefault();
       thisProduct.processOrder();
@@ -96,10 +86,8 @@ class Product{
   }
   processOrder(){
     const thisProduct = this;
-    // console.log('processOrder method executed');
     // covert form to object structure e.g. { sauce: ['tomato'], toppings: ['olives', 'redPeppers']}
     const formData = utils.serializeFormToObject(thisProduct.form);
-    // console.log('formData', formData);
 
     // set price to default price
     let price = thisProduct.data.price;
@@ -108,14 +96,12 @@ class Product{
     for(let paramId in thisProduct.data.params) {
     // determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes'... }
       const param = thisProduct.data.params[paramId];
-      // console.log(paramId, param);
       // for every option in this category
       for(let optionId in param.options) {
         // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
         const option = param.options[optionId];
         // find pictude associated with addon
         const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
-        // console.log(optionImage);
         // define when element is selected
         const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
         // check if there is param with a name of paramId in formData and if it includes optionId
@@ -123,13 +109,11 @@ class Product{
         // check if the option is not default
           if(!option.default) {
             // add option price to price variable
-            // console.log('opt1');
             price += option.price;
           }
         } // check if the option is default
         else if (option.default) {
         // reduce price variable
-        // console.log('opt2');
           price -= option.price;
         }
 
@@ -144,10 +128,8 @@ class Product{
     }
     /* add info about single product price */
     thisProduct.priceSingle = price;
-    // console.log(thisProduct.priceSingle);
     /* multiply price by amount */
     price *= thisProduct.amountWidget.value;
-    // console.log(thisProduct.amountWidget.value);
     /* update calculated price in the HTML */
     thisProduct.priceElem.innerHTML = price;
   }
@@ -174,13 +156,11 @@ class Product{
       price: thisProduct.priceSingle * thisProduct.amountWidget.value,
       params: thisProduct.prepareCartProductParams(),
     };
-    // console.log( productSummary);
 
     return productSummary;
   }
   prepareCartProductParams(){
     const thisProduct = this;
-    // console.log('prepareCartProductParams method executed');
     // covert form to object structure e.g. { sauce: ['tomato'], toppings: ['olives', 'redPeppers']}
     const formData = utils.serializeFormToObject(thisProduct.form);
     const params = {};

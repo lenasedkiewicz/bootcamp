@@ -53,8 +53,6 @@ const app = {
   initMenu: function() {
     const thisApp = this;
 
-    // console.log('thisApp.data:', thisApp.data);
-
     for(let productData in thisApp.data.products){
       new Product(thisApp.data.products[productData].id, thisApp.data.products[productData]);
     }
@@ -69,14 +67,12 @@ const app = {
         return rawResponse.json();
       })
       .then(function(parsedResponse){
-        // console.log('parsedResponse: ', parsedResponse);
         /* save parsedResponse at thisApp.data.products */
         thisApp.data.products = parsedResponse;
         /* execute initMenu method */
         app.initMenu();
 
       });
-    // console.log('thisApp.data', JSON.stringify(thisApp.data));
   },
   initCart: function(){
     const thisApp = this;
@@ -87,16 +83,10 @@ const app = {
     thisApp.productList = document.querySelector(select.containerOf.menu);
     thisApp.productList.addEventListener('add-to-cart', function(event){
       app.cart.add(event.detail.product);
-      console.log(event.detail.product);
     });
   },
   init: function(){
     const thisApp = this;
-    // console.log('*** App starting ***');
-    // console.log('thisApp:', thisApp);
-    // console.log('classNames:', classNames);
-    // console.log('settings:', settings);
-    // console.log('templates:', templates);
 
     thisApp.initPages();
     thisApp.initData();

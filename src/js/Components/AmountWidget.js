@@ -7,8 +7,6 @@ class AmountWidget{
 
     thisWidget.initActions();
 
-    // console.log('AmountWidget:', AmountWidget);
-    // console.log('constructor arguments:', element);
   }
   getElements(element){
     const thisWidget = this;
@@ -26,9 +24,7 @@ class AmountWidget{
     if ((thisWidget.value !== newValue) && !isNaN(newValue) && (newValue <= 10) && (newValue >= 0)) {
       thisWidget.value = newValue;
     }
-    // console.log(newValue);
     thisWidget.input.value = thisWidget.value;
-    // console.log(thisWidget.value);
     thisWidget.announce();
   }
   initActions(){
