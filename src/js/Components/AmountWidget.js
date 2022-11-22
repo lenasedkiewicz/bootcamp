@@ -1,5 +1,6 @@
 import { settings, select } from '../settings.js';
 import BaseWidget from './BaseWidget.js';
+
 class AmountWidget extends BaseWidget{
   constructor(element){
     super(element, settings.amountWidget.defaultValue);
@@ -8,6 +9,8 @@ class AmountWidget extends BaseWidget{
 
     thisWidget.initActions();
 
+    console.log(thisWidget);
+
   }
   getElements(){
     const thisWidget = this;
@@ -15,21 +18,6 @@ class AmountWidget extends BaseWidget{
     thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.amount.input);
     thisWidget.dom.linkDecrease = thisWidget.dom.wrapper.querySelector(select.widgets.amount.linkDecrease);
     thisWidget.dom.linkIncrease = thisWidget.dom.wrapper.querySelector(select.widgets.amount.linkIncrease);
-  }
-  setValue(value){
-    const thisWidget = this;
-    const newValue = thisWidget.parseValue(value);
-
-    if ((thisWidget.value !== newValue) && thisWidget.isValid(newValue)) {
-      thisWidget.value = newValue;
-      thisWidget.announce();
-    }
-
-    thisWidget.renderValue();
-  }
-
-  parseValue(value){
-    return parseInt(value);
   }
 
   isValid(value){
@@ -56,14 +44,6 @@ class AmountWidget extends BaseWidget{
       event.preventDefault();
       thisWidget.setValue(thisWidget.value + 1);
     });
-  }
-  announce(){
-    const thisWidget = this;
-
-    const event = new CustomEvent('updated', {
-      bubbles: true
-    });
-    thisWidget.dom.wrapper.dispatchEvent(event);
   }
 }
 
