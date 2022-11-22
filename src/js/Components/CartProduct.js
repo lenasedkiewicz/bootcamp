@@ -14,7 +14,6 @@ class CartProduct{
     thisCartProduct.getElements(element);
     thisCartProduct.initAmountWidget();
     thisCartProduct.initActions();
-    // console.log('thisCartProduct:', thisCartProduct);
   }
   getElements(element){
     const thisCartProduct = this;
@@ -59,7 +58,6 @@ class CartProduct{
     thisCartProduct.dom.remove.addEventListener('click', function(event){
       event.preventDefault();
       thisCartProduct.remove();
-    // console.log('Remove method was called');
     });
   }
   getData(){

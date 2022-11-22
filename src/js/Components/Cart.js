@@ -11,7 +11,6 @@ class Cart{
     thisCart.getElements(element);
     thisCart.initActions();
 
-    // console.log('new Cart', thisCart);
   }
   getElements(element){
     const thisCart = this;
@@ -48,7 +47,6 @@ class Cart{
   }
   add(menuProduct){
     const thisCart = this;
-    // console.log('adding product', menuProduct)
     /* Generate HTML based on template */
     const generatedHTML = templates.cartProduct(menuProduct);
     /* create element using utils.createElementFromHTML */
@@ -57,7 +55,6 @@ class Cart{
     thisCart.dom.productList.appendChild(generatedDOM);
     /* Push data bout products to array */
     thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
-    // console.log('thisCart.products', thisCart.products);
     thisCart.update();
   }
   update(){
@@ -73,7 +70,6 @@ class Cart{
       thisCart.subtotalPrice += product.price;
     }
 
-    // console.log('totalNumber: ', totalNumber, 'totalPrice: ', subtotalPrice);
     if(thisCart.subtotalPrice != 0) {
       thisCart.totalPrice = thisCart.subtotalPrice + deliveryFee;
       thisCart.dom.deliveryFee.innerHTML = deliveryFee;
@@ -81,18 +77,15 @@ class Cart{
       thisCart.totalPrice = 0;
       thisCart.dom.deliveryFee.innerHTML = 0;
     }
-    // console.log(subtotalPrice);
 
     thisCart.dom.totalNumber.innerHTML = thisCart.totalNumber;
     thisCart.dom.subtotalPrice.innerHTML = thisCart.subtotalPrice;
     for (let item of thisCart.dom.totalPrice) {
       item.innerHTML = thisCart.totalPrice;
     }
-    // console.log(thisCart.dom.totalPrice.item(1));
   }
   remove(event){
     const thisCart = this;
-    console.log('event: ', event);
 
     event.dom.wrapper.remove();
 
@@ -118,8 +111,6 @@ class Cart{
       products: [],
     };
 
-    // console.log(payload);
-
     for(let prod of thisCart.products) {
       payload.products.push(prod.getData());
     }
@@ -135,7 +126,7 @@ class Cart{
       .then(function(response){
         return response.json();
       }).then(function(parsedResponse){
-        console.log('parsedResponse: ', parsedResponse);
+        return parsedResponse;
       });
   }
 }
