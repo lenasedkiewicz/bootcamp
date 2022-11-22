@@ -18,14 +18,23 @@ class AmountWidget extends BaseWidget{
   }
   setValue(value){
     const thisWidget = this;
-    const newValue = parseInt(value);
+    const newValue = thisWidget.parseValue(value);
 
-    /* To Do : Add validation */
-    if ((thisWidget.value !== newValue) && !isNaN(newValue) && (newValue <= 10) && (newValue >= 0)) {
+    if ((thisWidget.value !== newValue) && thisWidget.isValid(newValue)) {
       thisWidget.value = newValue;
     }
     thisWidget.dom.input.value = thisWidget.value;
     thisWidget.announce();
+  }
+
+  parseValue(value){
+    return parseInt(value);
+  }
+
+  isValid(value){
+    return !isNaN(value)
+    && value >=settings.amountWidget.defaultMin
+    && value <= settings.amountWidget.defaultMax;
   }
   initActions(){
     const thisWidget = this;
