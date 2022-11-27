@@ -34,9 +34,9 @@ class Booking {
     thisBooking.peopleAmount = new AmountWidget(thisBooking.dom.peopleAmount);
     thisBooking.hoursAmount = new AmountWidget(thisBooking.dom.hoursAmount);
 
-    thisBooking.dom.hoursAmount.addEventListener('updated', function(){
-      thisBooking.amount = thisBooking.amountWidget.value;
-    });
+    // thisBooking.dom.hoursAmount.addEventListener('updated', function(){
+    //   thisBooking.amount = thisBooking.hoursAmount.value;
+    // });
   }
 }
 

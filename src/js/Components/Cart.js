@@ -56,6 +56,7 @@ class Cart{
     /* Push data bout products to array */
     thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
     thisCart.update();
+    // console.log(menuProduct);
   }
   update(){
     const thisCart = this;
