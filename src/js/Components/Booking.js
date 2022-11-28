@@ -1,4 +1,4 @@
-import {select, templates} from '../settings.js';
+import {select, settings, templates} from '../settings.js';
 import utils from '../utils.js';
 import AmountWidget from './AmountWidget.js';
 import DatePicker from './DatePicker.js';
@@ -10,6 +10,29 @@ class Booking {
 
     thisBooking.render(element);
     thisBooking.initWidgets();
+    thisBooking.getData();
+  }
+
+  getData(){
+    const thisBooking = this;
+    console.log({thisBooking});
+    const params = {
+      booking: [],
+      eventsCurrent: [],
+      eventsRepeat: [],
+    };
+
+    console.log({params});
+
+    const urls = {
+      booking:       settings.db.url + '/' + settings.db.booking
+                     + '?' + params.booking.join('&'),
+      eventsCurrent: settings.db.url + '/' + settings.db.event
+                     + '?' + params.eventsCurrent.join('&'),
+      eventsRepeat:  settings.db.url + '/' + settings.db.event
+                     + '?' + params.eventsRepeat.join('&'),
+    };
+    console.log({urls});
   }
 
   render(element){
