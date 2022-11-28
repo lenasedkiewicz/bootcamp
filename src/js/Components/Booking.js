@@ -15,14 +15,14 @@ class Booking {
 
   getData(){
     const thisBooking = this;
-    console.log({thisBooking});
+    // console.log({thisBooking});
     const params = {
       booking: [],
       eventsCurrent: [],
       eventsRepeat: [],
     };
 
-    console.log({params});
+    // console.log({params});
 
     const urls = {
       booking:       settings.db.url + '/' + settings.db.booking
@@ -32,7 +32,7 @@ class Booking {
       eventsRepeat:  settings.db.url + '/' + settings.db.event
                      + '?' + params.eventsRepeat.join('&'),
     };
-    console.log({urls});
+    // console.log({urls});
   }
 
   render(element){
