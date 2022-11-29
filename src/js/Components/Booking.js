@@ -46,14 +46,24 @@ class Booking {
 
     Promise.all([
       fetch(urls.booking),
-    ]).then(function(allResponses){
-      const bookingsResponse = allResponses [0];
-      return Promise.all([
-        bookingsResponse.json(),
-      ]);
-    }).then(function(responses){
-      console.log(responses);
-    });
+      fetch(urls.eventsCurrent),
+      fetch(urls.eventsRepeat),
+    ])
+      .then(function(allResponses){
+        const bookingsResponse = allResponses [0];
+        const eventsCurrentResponse = allResponses [1];
+        const eventsRepeatResponse = allResponses [2];
+        return Promise.all([
+          bookingsResponse.json(),
+          eventsCurrentResponse.json(),
+          eventsRepeatResponse.json(),
+        ]);
+      })
+      .then(function([bookings, eventsCurrent, eventsRepeat]){
+        console.log(bookings);
+        console.log(eventsCurrent);
+        console.log(eventsRepeat);
+      });
   }
 
   render(element){
