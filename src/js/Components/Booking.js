@@ -35,8 +35,6 @@ class Booking {
       ],
     };
 
-    console.log({params});
-
     const urls = {
       booking:       settings.db.url + '/' + settings.db.booking
                      + '?' + params.booking.join('&'),
@@ -45,7 +43,14 @@ class Booking {
       eventsRepeat:  settings.db.url + '/' + settings.db.event
                      + '?' + params.eventsRepeat.join('&'),
     };
-    console.log({urls});
+
+    Promise.all([
+      fetch(urls.booking),
+    ]).then(function(bookingsResponse){
+      return bookingsResponse.json();
+    }).then(function(bookings){
+      console.log(bookings);
+    });
   }
 
   render(element){
