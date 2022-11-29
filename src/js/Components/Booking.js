@@ -46,10 +46,13 @@ class Booking {
 
     Promise.all([
       fetch(urls.booking),
-    ]).then(function(bookingsResponse){
-      return bookingsResponse.json();
-    }).then(function(bookings){
-      console.log(bookings);
+    ]).then(function(allResponses){
+      const bookingsResponse = allResponses [0];
+      return Promise.all([
+        bookingsResponse.json(),
+      ]);
+    }).then(function(responses){
+      console.log(responses);
     });
   }
 
