@@ -15,11 +15,19 @@ class Booking {
 
   getData(){
     const thisBooking = this;
-    // console.log({thisBooking});
+
     const params = {
-      booking: [],
-      eventsCurrent: [],
-      eventsRepeat: [],
+      booking: [
+        settings.db.dateStartParamKey + '=' + utils.dateToStr(thisBooking.datePickerElem.minDate),
+        settings.db.dateEndParamKey + '=' + utils.dateToStr(thisBooking.datePickerElem.maxDate),
+      ],
+      eventsCurrent: [
+        settings.db.dateStartParamKey + '=' + utils.dateToStr(thisBooking.datePickerElem.minDate),
+        settings.db.dateEndParamKey + '=' + utils.dateToStr(thisBooking.datePickerElem.maxDate),
+      ],
+      eventsRepeat: [
+        settings.db.dateEndParamKey + '=' + utils.dateToStr(thisBooking.datePickerElem.maxDate),
+      ],
     };
 
     // console.log({params});
@@ -32,7 +40,7 @@ class Booking {
       eventsRepeat:  settings.db.url + '/' + settings.db.event
                      + '?' + params.eventsRepeat.join('&'),
     };
-    // console.log({urls});
+    console.log({urls});
   }
 
   render(element){
