@@ -60,10 +60,20 @@ class Booking {
         ]);
       })
       .then(function([bookings, eventsCurrent, eventsRepeat]){
-        console.log(bookings);
-        console.log(eventsCurrent);
-        console.log(eventsRepeat);
+        // console.log(bookings);
+        // console.log(eventsCurrent);
+        // console.log(eventsRepeat);
+        thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
       });
+  }
+  parseData(bookings, eventsCurrent, eventsRepeat){
+    const thisBooking = this;
+
+    thisBooking.booked = {};
+
+    for (let item of eventsCurrent){
+      thisBooking.makeBooked(item.date, item.hour, item.duration, item.table );
+    }
   }
 
   render(element){
