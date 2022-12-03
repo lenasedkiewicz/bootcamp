@@ -68,11 +68,30 @@ class Booking {
   }
   parseData(bookings, eventsCurrent, eventsRepeat){
     const thisBooking = this;
-
     thisBooking.booked = {};
-
+    console.log(eventsRepeat);
     for (let item of eventsCurrent){
       thisBooking.makeBooked(item.date, item.hour, item.duration, item.table );
+    }
+    //console.log(thisBooking.booked);
+  }
+
+  makeBooked(date, hour, duration, table ){
+    const thisBooking = this;
+
+    if(typeof thisBooking.booked[date] == 'undefined'){
+      thisBooking.booked[date] = {};
+    }
+    const startHour = utils.hourToNumber(hour);
+
+    if(typeof thisBooking.booked[date][startHour] == 'undefined'){
+      thisBooking.booked[date][startHour] = [];
+    }
+
+    thisBooking.booked[date][startHour].push(table);
+
+    for( let index = 0; index < 3; index ++){
+      console.log('loop', index);
     }
   }
 
