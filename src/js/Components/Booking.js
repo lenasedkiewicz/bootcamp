@@ -86,6 +86,7 @@ class Booking {
       }
     }
     //console.log(thisBooking.booked);
+    thisBooking.updateDOM();
   }
 
   makeBooked(date, hour, duration, table ){
@@ -167,6 +168,10 @@ class Booking {
 
     thisBooking.datePickerElem = new DatePicker(thisBooking.dom.datePicker);
     thisBooking.hourPickerElem = new HourPicker(thisBooking.dom.hourPicker);
+
+    thisBooking.dom.wrapper.addEventListener('updated', function(){
+      thisBooking.updateDOM();
+    });
   }
 }
 
