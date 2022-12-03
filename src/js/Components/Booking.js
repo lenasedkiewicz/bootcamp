@@ -84,14 +84,12 @@ class Booking {
     }
     const startHour = utils.hourToNumber(hour);
 
-    if(typeof thisBooking.booked[date][startHour] == 'undefined'){
-      thisBooking.booked[date][startHour] = [];
-    }
+    for( let hourBlock = startHour; hourBlock < startHour + duration; hourBlock += 0.5){
+      if(typeof thisBooking.booked[date][hourBlock] == 'undefined'){
+        thisBooking.booked[date][hourBlock] = [];
+      }
 
-    thisBooking.booked[date][startHour].push(table);
-
-    for( let index = 0; index < 3; index ++){
-      console.log('loop', index);
+      thisBooking.booked[date][hourBlock].push(table);
     }
   }
 
