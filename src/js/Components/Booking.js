@@ -85,7 +85,7 @@ class Booking {
         }
       }
     }
-    //console.log(thisBooking.booked);
+    console.log(thisBooking.booked);
     thisBooking.updateDOM();
   }
 
@@ -127,11 +127,11 @@ class Booking {
       if(!isNaN(tableId)){
         tableId = parseInt(tableId);
       }
-
+      console.log();
       if(
         !allAvailable
         &&
-        thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId) > -1
+        thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
       ){
         table.classList.add(classNames.booking.tableBooked);
       } else {
