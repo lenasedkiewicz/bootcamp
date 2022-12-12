@@ -229,6 +229,11 @@ class Booking {
     thisBooking.dom.tables = thisBooking.dom.wrapper.querySelectorAll(
       select.booking.tables
     );
+    thisBooking.dom.formSubmit = element.querySelector(select.booking.formSubmit);
+    thisBooking.dom.phone = element.querySelector(select.booking.phone);
+    thisBooking.dom.address = element.querySelector(select.booking.address);
+    thisBooking.dom.starters = element.querySelector(select.booking.starter);
+    thisBooking.starters = [];
   }
 
   initWidgets() {
@@ -250,7 +255,7 @@ class Booking {
 
     thisBooking.element.addEventListener('click', function(event){
       const starter = event.target;
-
+      // debugger;
       if(starter.getAttribute('type') === 'checkbox' && starter.getAttribute('name') === 'starter'){
         if(starter.checked){
           thisBooking.starters.push(starter.value);
