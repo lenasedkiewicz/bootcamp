@@ -14,7 +14,7 @@
     "max-nesting-depth": [3, {
       "ignore": ["pseudo-classes"]
     }],
-    "rule-empty-line-before": [ "always", {
+    "rule-empty-line-before": [ null, {
       "except": ["first-nested"],
       "ignore": ["after-comment"]
     } ],
