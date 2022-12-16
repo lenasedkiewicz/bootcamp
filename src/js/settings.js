@@ -83,6 +83,8 @@ export const classNames = {
     loading: 'loading',
     tableBooked: 'booked',
     tableClicked: 'success',
+    tables: '.floor-plan',
+    starter: 'starters',
   },
   nav: {
     active: 'active',

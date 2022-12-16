@@ -170,9 +170,9 @@ class Booking {
   tableSelect() {
     const thisBooking = this;
 
-    thisBooking.element.addEventListener('click', function (event) {
+    thisBooking.dom.table.addEventListener('click', function (event) {
       event.preventDefault();
-      // debugger;
+      console.log(thisBooking.dom.table);
       const clickedElement = event.target;
 
       const table = clickedElement.getAttribute(
@@ -199,6 +199,36 @@ class Booking {
     });
 
   }
+
+  sendBooking(){
+    const thisBooking = this;
+
+    const url = settings.db.url + '/' + settings.db.bookings;
+    const payload = {
+      date: thisBooking.datePickerElem.value,
+      hour: thisBooking.hourPickerElem.value,
+      table: thisBooking.tableId,
+      duration: parseInt(thisBooking.hoursAmount.value),
+      ppl: parseInt(thisBooking.peopleAmount.value),
+      phone: thisBooking.dom.phone.value,
+      address: thisBooking.dom.address.value,
+      starters: thisBooking.starters
+    };
+
+    thisBooking.makeBooked(payload.date, payload.hour, payload.duration, payload.table);
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    };
+
+    fetch(url, options);
+    thisBooking.updateDOM();
+  }
+
   render(element) {
     const thisBooking = this;
 
@@ -229,6 +259,7 @@ class Booking {
     thisBooking.dom.tables = thisBooking.dom.wrapper.querySelectorAll(
       select.booking.tables
     );
+    thisBooking.dom.table = thisBooking.dom.wrapper.querySelector(classNames.booking.tables);
     thisBooking.dom.formSubmit = element.querySelector(select.booking.formSubmit);
     thisBooking.dom.phone = element.querySelector(select.booking.phone);
     thisBooking.dom.address = element.querySelector(select.booking.address);
