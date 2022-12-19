@@ -103,11 +103,12 @@ class Booking {
         }
       }
     }
-    console.log(thisBooking.booked);
+    // console.log(thisBooking.booked);
     thisBooking.updateDOM();
   }
 
   makeBooked(date, hour, duration, table) {
+    console.log(table);
     const thisBooking = this;
 
     if (typeof thisBooking.booked[date] == 'undefined') {
@@ -126,6 +127,7 @@ class Booking {
 
       thisBooking.booked[date][hourBlock].push(table);
     }
+    //console.log(thisBooking.booked);
   }
 
   updateDOM() {
@@ -155,7 +157,6 @@ class Booking {
       if (!isNaN(tableId)) {
         tableId = parseInt(tableId);
       }
-      console.log();
       if (
         !allAvailable &&
         thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
@@ -172,7 +173,7 @@ class Booking {
 
     thisBooking.dom.table.addEventListener('click', function (event) {
       event.preventDefault();
-      console.log(thisBooking.dom.table);
+      // console.log(thisBooking.dom.table);
       const clickedElement = event.target;
 
       const table = clickedElement.getAttribute(
@@ -182,17 +183,17 @@ class Booking {
         if (
           !clickedElement.classList.contains(classNames.booking.tableBooked)
         ) {
-          const isSuccess = clickedElement.classList.contains(
-            classNames.booking.tableClicked
-          );
+          const isSuccess = clickedElement.classList.contains(classNames.booking.tableClicked);
           const tables = thisBooking.element.querySelectorAll(
             select.booking.tables
           );
           for (let table of tables) {
             table.classList.remove(classNames.booking.tableClicked);
+            thisBooking.tableId = undefined;
           }
           if (!isSuccess) {
             clickedElement.classList.add(classNames.booking.tableClicked);
+            thisBooking.tableId = table;
           }
         }
       }
@@ -202,12 +203,13 @@ class Booking {
 
   sendBooking(){
     const thisBooking = this;
+    console.log(thisBooking);
 
     const url = settings.db.url + '/' + settings.db.bookings;
     const payload = {
       date: thisBooking.datePickerElem.value,
       hour: thisBooking.hourPickerElem.value,
-      table: thisBooking.tableId,
+      table: Number(thisBooking.tableId),
       duration: parseInt(thisBooking.hoursAmount.value),
       ppl: parseInt(thisBooking.peopleAmount.value),
       phone: thisBooking.dom.phone.value,
