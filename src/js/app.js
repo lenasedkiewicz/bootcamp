@@ -2,6 +2,7 @@ import { settings, select, classNames } from './settings.js';
 import Product from './Components/Product.js';
 import Cart from './Components/Cart.js';
 import Booking from './Components/Booking.js';
+import Home from './Components/Home.js';
 
 // const { stringify } = require('postcss');
 
@@ -42,6 +43,13 @@ const app = {
 
     thisApp.booking = new Booking(bookingElement);
 
+  },
+  initHomePage: function(){
+    const thisApp = this;
+
+    const homeElement  = document.querySelector(select.containerOf.home);
+
+    thisApp.homePage = new Home(homeElement);
   },
   activatePage: function(pageId){
     const thisApp = this;
@@ -99,6 +107,7 @@ const app = {
     thisApp.initBooking();
     thisApp.initData();
     thisApp.initCart();
+    thisApp.initHomePage();
   },
 };
 app.init();
