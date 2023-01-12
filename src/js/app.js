@@ -49,7 +49,7 @@ const app = {
 
     const homeElement  = document.querySelector(select.containerOf.home);
 
-    thisApp.homePage = new Home(homeElement);
+    thisApp.home = new Home(homeElement);
   },
   activatePage: function(pageId){
     const thisApp = this;
