@@ -11,6 +11,7 @@ export const select = {
     pages: '#pages',
     booking: '.booking-wrapper',
     home: '.home-page-wrapper',
+    carousel: '.carousel',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -52,6 +53,7 @@ export const select = {
   },
   nav: {
     links: '.main-nav a',
+    homeLinks: '.home-links a',
   },
   cart: {
     productList: '.cart__order-summary',
@@ -132,4 +134,5 @@ export const templates = {
   menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
   cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
   bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
+  home: Handlebars.compile(document.querySelector(select.templateOf.home).innerHTML),
 };
