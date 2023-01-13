@@ -1,4 +1,4 @@
-//MAIN
+// /* Global */
 
 .home-page-wrapper {
   margin: ($base-size * 3.5) auto;
@@ -8,14 +8,11 @@
   border-radius: $radius;
 }
 
-.home-links {
-  &.top {
-    display: inline-flex;
-  }
-
-  &.bottom {
-    display: inline-flex;
-  }
+.home-links.top {
+  display: inline-flex;
+}
+.home-links.bottom  {
+    display: inline-grid;
 }
 
 .home-order {
@@ -117,7 +114,7 @@
   }
 }
 
-//CAROUSEL
+/* Carousel */
 
 .carousel {
   height: $base-size * 16;
@@ -153,7 +150,7 @@
   height: $base-size * 16; /* height of carousel */
 }
 
-// GALLERY
+/* Gallery */
 
 .gallery {
   margin-top: $base-size * 6;
