@@ -7,6 +7,7 @@ import RemovePostModal from "../../features/RemovePostModal/RemovePostModal";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { removePost } from "../../redux/postsRedux";
+import { dateToString } from "../../utils/dateToStr";
 
 const SinglePost = (props) => {
   const { id } = useParams();
@@ -53,7 +54,7 @@ const SinglePost = (props) => {
               {postContent.author}
             </p>
             <p>
-              <b>Published:</b> {postContent.publishedDate}
+              <b>Published:</b> {dateToString(postContent.publishedDate)}
             </p>
             <p dangerouslySetInnerHTML={{ __html: postContent.content }} />
           </Col>

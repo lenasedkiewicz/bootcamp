@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import dateFormat from "dateformat";
 import { Navigate } from "react-router-dom";
+import { dateToString } from "../../utils/dateToStr";
 
 const EditPostForm = () => {
   const { id } = useParams();
