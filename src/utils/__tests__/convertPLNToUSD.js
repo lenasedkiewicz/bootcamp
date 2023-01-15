@@ -16,3 +16,9 @@ describe("TestNANforPLNtoUSD", () => {
     expect(convertPLNToUSD("-543")).toBeNaN();
   });
 });
+
+describe("TestIfInputEmpty", () => {
+  it('should return NaN when input is empty', () => {
+    expect(convertPLNToUSD()).toBeNaN();
+  });
+});
