@@ -22,3 +22,12 @@ describe("TestIfInputEmpty", () => {
     expect(convertPLNToUSD()).toBeNaN();
   });
 });
+
+describe("IfReturnsError", () => {
+  it('should return "Error" when input is different than number and string', () => {
+    expect(convertPLNToUSD({})).toBe('Error');
+    expect(convertPLNToUSD([])).toBe('Error');
+    expect(convertPLNToUSD(null)).toBe('Error');
+    expect(convertPLNToUSD(function() {})).toBe('Error');
+  });
+});
