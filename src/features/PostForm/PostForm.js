@@ -78,6 +78,7 @@ const PostForm = ({ action, actionText, ...props }) => {
               />
             </Form.Group>
 
+            <Form.Label>Content</Form.Label>
             <ReactQuill value={content} onChange={setContent} />
 
             <Button variant="primary" type="submit">
