@@ -55,7 +55,7 @@ const SinglePost = (props) => {
             <p>
               <b>Published:</b> {postContent.publishedDate}
             </p>
-            <p>{postContent.content}</p>
+            <p dangerouslySetInnerHTML={{ __html: postContent.content }} />
           </Col>
         </Row>
       </>
