@@ -7,7 +7,9 @@ describe("ConvertPLNtoUSD", () => {
     expect(convertPLNToUSD(20)).toBe("$5.71");
     expect(convertPLNToUSD(12)).toBe("$3.43");
   });
+});
 
+describe("TestNANforPLNtoUSD", () => {
   it("should return NaN when input is text", () => {
     expect(convertPLNToUSD("6")).toBeNaN();
     expect(convertPLNToUSD("abc")).toBeNaN();
