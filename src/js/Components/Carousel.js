@@ -24,7 +24,6 @@ class Carousel {
       imagesLoaded: true,
       autoPlay: true,
     });
-    console.log(flkty);
   }
 }
 
