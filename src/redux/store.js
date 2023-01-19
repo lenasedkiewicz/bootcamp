@@ -1,5 +1,6 @@
 import { createStore } from "redux";
 import shortid from "shortid";
+import initialState from "./initialState";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -17,12 +18,7 @@ const reducer = (state, action) => {
   }
 };
 
-const initialState = {
-  books: [
-    { id: 1, title: "Shogun", author: "James Clavell" },
-    { id: 2, title: "the Witcher", author: "Andrzej Sapkowski" },
-  ],
-};
+
 
 const store = createStore(
   reducer,
