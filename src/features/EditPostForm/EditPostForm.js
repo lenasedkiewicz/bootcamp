@@ -4,9 +4,7 @@ import { useDispatch } from "react-redux";
 import { editPost, getPostById } from "../../redux/postsRedux";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import dateFormat from "dateformat";
 import { Navigate } from "react-router-dom";
-import { dateToString } from "../../utils/dateToStr";
 
 const EditPostForm = () => {
   const { id } = useParams();
@@ -33,10 +31,7 @@ const EditPostForm = () => {
         actionText={"Edit Post"}
         title={editedPostContent.title}
         author={editedPostContent.author}
-        publishedDate={dateFormat(
-          editedPostContent.publishedDate,
-          "yyyy-mm-dd"
-        )}
+        publishedDate={editedPostContent.publishedDate}
         shortDescription={editedPostContent.shortDescription}
         content={editedPostContent.content}
         id={id}

@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { getAllPosts } from "../../redux/postsRedux";
 import PostCard from "../PostCard/PostCard";
+import { dateToString } from "../../utils/dateToStr";
 
 const PostContainer = () => {
   const posts = useSelector(getAllPosts);
@@ -13,7 +14,7 @@ const PostContainer = () => {
           id={post.id}
           title={post.title}
           author={post.author}
-          date={post.publishedDate}
+          date={dateToString(post.publishedDate)}
           description={post.shortDescription}
         />
       ))}
