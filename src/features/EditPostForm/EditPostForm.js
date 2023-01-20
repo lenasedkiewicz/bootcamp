@@ -32,6 +32,7 @@ const EditPostForm = () => {
         title={editedPostContent.title}
         author={editedPostContent.author}
         publishedDate={editedPostContent.publishedDate}
+        categoryId={editedPostContent.category}
         shortDescription={editedPostContent.shortDescription}
         content={editedPostContent.content}
         id={id}
