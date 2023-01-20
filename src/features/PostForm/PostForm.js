@@ -44,7 +44,7 @@ const PostForm = ({ action, actionText, ...props }) => {
                   onChange={(e) => setTitle(e.target.value)}
                   value={title}
                 />
-                {errors.title && <small className="d-block form-text text-danger mt-2">Title is too short (min is 3)</small>}
+                {errors.title && <small className="d-block form-text text-danger mt-2">Title should have at least 3 characters</small>}
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="author">
@@ -56,7 +56,7 @@ const PostForm = ({ action, actionText, ...props }) => {
                   onChange={(e) => setAuthor(e.target.value)}
                   value={author}
                 />
-                {errors.title && <small className="d-block form-text text-danger mt-2">Author's name is too short (min is 3)</small>}
+                {errors.title && <small className="d-block form-text text-danger mt-2">Author's name should have at least 3 characters</small>}
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="published">
@@ -79,7 +79,7 @@ const PostForm = ({ action, actionText, ...props }) => {
                 onChange={(e) => setShortDescription(e.target.value)}
                 value={shortDescription}
               />
-              {errors.title && <small className="d-block form-text text-danger mt-2">Description should have at least 20 characters </small>}
+              {errors.title && <small className="d-block form-text text-danger mt-2">Description should have at least 20 characters</small>}
             </Form.Group>
 
             <Form.Label>Content</Form.Label>
