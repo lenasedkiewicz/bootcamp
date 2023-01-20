@@ -1,45 +1,23 @@
-import { useParams } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { getPostsByCategory } from '../../redux/postsRedux';
-import { Row, Col, Button } from 'react-bootstrap';
-import { Card } from 'react-bootstrap';
-import { dateToString } from '../../utils/dateToStr';
-import { Link } from 'react-router-dom';
+import { allCategories } from "../../redux/categoriesRedux";
+import { useSelector } from "react-redux";
+import { Row, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const CategoryFilter = () => {
-  const { category } = useParams();
-  const postsData = useSelector((state) => getPostsByCategory(state, category));
+const Categories = () => {
+    const categories = useSelector(allCategories)
 
-  if (!postsData) return <Navigate to='/' />;
-  return (
-    <section>
-      <Row>
-        {postsData.map((post) => (
-          <Col key={post.id} md={4} className='justify-content-md-start mb-5 mr-2'>
-            <Card className='rounded' style={{ maxHeight: '20rem' }}>
-              <Card.Body>
-                <Card.Title>{post.title}</Card.Title>
-                <Card.Text>
-                  <b>Author:</b> {post.author}
-                </Card.Text>
-                <Card.Text>
-                  <b>Published:</b> {dateToString(post.publishedDate)}
-                </Card.Text>
-                <Card.Text>
-                  <b>Category:</b> {post.category}
-                </Card.Text>
-                <Card.Text>{post.shortDescription}</Card.Text>
-                <Link className='justify-content-md-center' to={'/post/' + post.id}>
-                  <Button variant='primary'>Read more</Button>
-                </Link>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </section>
-  );
+    return (
+        <section>
+          <h1 className="mb-5 justify-content-center d-flex">Categories</h1>
+          <Row>
+            {categories.map((category) => (
+              <Card key={category} className="d-flex flex-colum">
+                <Link  to={'/categories/'+ category} className="text-decoration-none">{category}</Link>
+              </Card>
+            ))}
+          </Row>
+        </section>
+    );
 };
 
-export default CategoryFilter;
+export default Categories;

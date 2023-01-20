@@ -1,54 +1,54 @@
-import { useParams } from "react-router-dom";
-import { Navigate } from "react-router-dom";
+import { Card, Container, Row, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { getPostsByCategory } from "../../redux/postsRedux"
-import { Row, Col, Button } from "react-bootstrap";
-import { Card } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { getPostsByCategory } from "../../redux/postsRedux";
 import { dateToString } from "../../utils/dateToStr";
 import { Link } from "react-router-dom";
 
 const CategoryFilter = () => {
   const { category } = useParams();
-  const postsData = useSelector((state) =>
-    getPostsByCategory(state, category)
-  );
+  const posts = useSelector((state) => getPostsByCategory(state, category));
+  console.log(posts);
 
-  if (!postsData) return <Navigate to="/" />;
+  if (posts.length === 0)
+    return (
+      <div>
+        <h1>Category: {category}</h1>
+        <p>There are no posts in this category</p>
+      </div>
+    );
+
   return (
-    <section>
-      <Row>
-      <h1>Category: {category}</h1>
-        {postsData.map((post) => (
-          <Col
-            key={post.id}
-            md={4}
-            className="justify-content-md-start mb-5 mr-2"
-          >
-            <Card className="rounded" style={{ maxHeight: "20rem" }}>
-              <Card.Body>
-                <Card.Title>{post.title}</Card.Title>
-                <Card.Text>
-                  <b>Author:</b> {post.author}
-                </Card.Text>
-                <Card.Text>
-                  <b>Published:</b> {dateToString(post.publishedDate)}
-                </Card.Text>
-                <Card.Text>
-                  <b>Category:</b> {post.category}
-                </Card.Text>
-                <Card.Text>{post.shortDescription}</Card.Text>
-                <Link
-                  className="justify-content-md-center"
-                  to={"/post/" + post.id}
-                >
-                  <Button variant="primary">Read more</Button>
-                </Link>
-              </Card.Body>
-            </Card>
-          </Col>
+    <Container>
+      <h1 className="d-flex justify-content-center"> Category: {category} </h1>
+      <Row className="d-flex justify-content-center">
+        {posts.map((post) => (
+          <Card key={post.id} className="col-xs-12 col-sm-6 col-lg-4 mt-4">
+            <Card.Body>
+              <Card.Title className="pb-3">{post.title}</Card.Title>
+              <Card.Text>
+                <p>
+                  <b>Author: </b>
+                  {post.author}
+                </p>
+                <p>
+                  <b>Published: </b>
+                  {dateToString(post.publishedDate)}
+                </p>
+                <p>
+                  <b>Category: </b>
+                  {post.category}
+                </p>
+              </Card.Text>
+              <Card.Text>{post.shortDescription}</Card.Text>
+              <Button variant="primary" as={Link} to={"/post/" + post.id}>
+                Read more
+              </Button>
+            </Card.Body>
+          </Card>
         ))}
       </Row>
-    </section>
+    </Container>
   );
 };
 
