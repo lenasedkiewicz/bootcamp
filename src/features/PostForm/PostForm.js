@@ -1,9 +1,10 @@
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useState } from "react";
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useForm } from "react-hook-form";
 
 const PostForm = ({ action, actionText, ...props }) => {
   const [title, setTitle] = useState(props.title || "");
@@ -19,6 +20,11 @@ const PostForm = ({ action, actionText, ...props }) => {
     action({ title, author, publishedDate, shortDescription, content });
   };
 
+  const {
+    register,
+    handleSubmit: validate,
+    formState: { errors },
+  } = useForm();
   return (
     <>
       <Row className="justify-content-md-center">
@@ -28,17 +34,18 @@ const PostForm = ({ action, actionText, ...props }) => {
       </Row>
       <Row className="justify-content-md-center">
         <Col xs={12} md={10}>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={validate(handleSubmit)}>
             <Col md={6}>
               <Form.Group className="mb-3" controlId="title">
                 <Form.Label>Title</Form.Label>
                 <Form.Control
+                  {...register("title", { required: true })}
                   type="text"
                   placeholder="Enter title"
-                  required
                   onChange={(e) => setTitle(e.target.value)}
                   value={title}
                 />
+                {errors.title && <span>This field is required</span>}
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="author">
@@ -54,7 +61,10 @@ const PostForm = ({ action, actionText, ...props }) => {
 
               <Form.Group className="mb-3" controlId="published">
                 <Form.Label>Published</Form.Label>
-                <DatePicker selected={publishedDate} onChange={(date) => setPublishedDate(date)} />
+                <DatePicker
+                  selected={publishedDate}
+                  onChange={(date) => setPublishedDate(date)}
+                />
               </Form.Group>
             </Col>
 
