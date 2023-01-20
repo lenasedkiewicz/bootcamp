@@ -71,14 +71,15 @@ const PostForm = ({ action, actionText, ...props }) => {
             <Form.Group className="mb-3" controlId="description">
               <Form.Label>Short Description</Form.Label>
               <Form.Control
+              {...register("shortDescription", { required: true, minLength: 20 })}
                 type="text"
                 as="textarea"
                 rows={3}
                 placeholder="Write here short description of your post."
-                required
                 onChange={(e) => setShortDescription(e.target.value)}
                 value={shortDescription}
               />
+              {errors.title && <small className="d-block form-text text-danger mt-2">Description should have at least 20 characters </small>}
             </Form.Group>
 
             <Form.Label>Content</Form.Label>
