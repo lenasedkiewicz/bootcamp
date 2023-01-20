@@ -14,16 +14,23 @@ const PostForm = ({ action, actionText, ...props }) => {
     props.shortDescription || ""
   );
   const [content, setContent] = useState(props.content || "");
-
-  const handleSubmit = (e) => {
-    action({ title, author, publishedDate, shortDescription, content });
-  };
+  const [contentError, setContentError] = useState(false);
+  const [dateError, setDateError] = useState(false);
 
   const {
     register,
     handleSubmit: validate,
     formState: { errors },
   } = useForm();
+
+  const handleSubmit = () => {
+    setContentError(!content);
+    setDateError(!publishedDate);
+    if (content && publishedDate) {
+      action({ title, author, publishedDate, shortDescription, content });
+    }
+  };
+
   return (
     <>
       <Row className="justify-content-md-center">
@@ -44,19 +51,27 @@ const PostForm = ({ action, actionText, ...props }) => {
                   onChange={(e) => setTitle(e.target.value)}
                   value={title}
                 />
-                {errors.title && <small className="d-block form-text text-danger mt-2">Title should have at least 3 characters</small>}
+                {errors.title && (
+                  <small className="d-block form-text text-danger mt-2">
+                    Title should have at least 3 characters
+                  </small>
+                )}
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="author">
                 <Form.Label>Author</Form.Label>
                 <Form.Control
-                {...register("author", { required: true, minLength: 3 })}
+                  {...register("author", { required: true, minLength: 3 })}
                   type="text"
                   placeholder="Enter author"
                   onChange={(e) => setAuthor(e.target.value)}
                   value={author}
                 />
-                {errors.title && <small className="d-block form-text text-danger mt-2">Author's name should have at least 3 characters</small>}
+                {errors.title && (
+                  <small className="d-block form-text text-danger mt-2">
+                    Author's name should have at least 3 characters
+                  </small>
+                )}
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="published">
@@ -65,13 +80,21 @@ const PostForm = ({ action, actionText, ...props }) => {
                   selected={publishedDate}
                   onChange={(date) => setPublishedDate(date)}
                 />
+                {dateError && (
+                  <small className="d-block form-text text-danger mt-2">
+                    Please choose publication date
+                  </small>
+                )}
               </Form.Group>
             </Col>
 
             <Form.Group className="mb-3" controlId="description">
               <Form.Label>Short Description</Form.Label>
               <Form.Control
-              {...register("shortDescription", { required: true, minLength: 20 })}
+                {...register("shortDescription", {
+                  required: true,
+                  minLength: 20,
+                })}
                 type="text"
                 as="textarea"
                 rows={3}
@@ -79,11 +102,20 @@ const PostForm = ({ action, actionText, ...props }) => {
                 onChange={(e) => setShortDescription(e.target.value)}
                 value={shortDescription}
               />
-              {errors.title && <small className="d-block form-text text-danger mt-2">Description should have at least 20 characters</small>}
+              {errors.title && (
+                <small className="d-block form-text text-danger mt-2">
+                  Description should have at least 20 characters
+                </small>
+              )}
             </Form.Group>
 
             <Form.Label>Content</Form.Label>
-            <ReactQuill value={content} onChange={setContent} />
+            <ReactQuill value={content} onChange={setContent} placeholder="Add your text here"/>
+            {contentError && (
+              <small className="d-block form-text text-danger mt-2">
+                Content can't be empty
+              </small>
+            )}
 
             <Button variant="primary" type="submit">
               {actionText}
