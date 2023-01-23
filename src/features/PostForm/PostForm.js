@@ -109,7 +109,7 @@ const PostForm = ({ action, actionText, ...props }) => {
                   value={category}
                   aria-label="Select category"
                 >
-                  <option>Select category</option>
+                  <option value="" disabled selected>Select category</option>
                   {categories.map((category, index) => (
                     <option key={index} value={category}>
                       {category}
