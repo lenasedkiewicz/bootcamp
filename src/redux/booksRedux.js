@@ -20,6 +20,19 @@ export const fetchBooks = () => {
     .then((books) => dispatch(updateBooks(books)));
   }
 };
+export const addBookRequest = (newBook) => {
+  return (dispatch) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'ContentType': 'application/json'
+      },
+      body: JSON.stringify(newBook),
+    };
+    fetch("http://localhost:3131/api/books", options)
+    .then(() => dispatch(addBook(newBook)))
+  }
+}
 
 const reducer = (statePart = [], action) => {
   switch (action.type) {
