@@ -6,11 +6,11 @@ const createActionName = (actionName) => `app/status/${actionName}`;
 export const updateStatus = (payload) => ({ type: UPDATE_STATUS, payload });
 
 // action creators
-const UPDATE_STATUS = createActionName('UPDATE_STATUS');
+const UPDATE_STATUS = createActionName("UPDATE_STATUS");
 
 export const fetchStatus = () => {
   return (dispatch) => {
-    fetch('http://localhost:3131/api/status')
+    fetch("http://localhost:3131/api/status")
       .then((res) => res.json())
       .then((status) => dispatch(updateStatus(status)));
   };
