@@ -5,14 +5,14 @@
       "people": "2",
       "maxPeople": "2",
       "bill": "2",
-      "status": "Busy"
+      "status": "Reserved"
     },
     {
       "id": "2",
       "people": "3",
       "maxPeople": "6",
       "bill": "0",
-      "status": "Busy"
+      "status": "Free"
     },
     {
       "id": "3",
