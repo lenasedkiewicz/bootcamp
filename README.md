@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It's working version can be found here: https://waiter-react-redux-app.lenahunter.repl.co
+
+## Errors on Replit
+Replit App seems to not work when Change button is clicked. Due to some Replit - repated error it does not redirect app to home page, however, data is changed in database and can be found on a home page.
 
 ## Available Scripts
 
