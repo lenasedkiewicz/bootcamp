@@ -6,6 +6,7 @@ class FinderPage {
     const thisFinder = this;
 
     thisFinder.render(element);
+    thisFinder.initGrid();
   }
 
   render(element) {
@@ -24,6 +25,23 @@ class FinderPage {
 
     thisFinder.dom = {};
     thisFinder.dom.wrapper = element;
+  }
+  initGrid(){
+
+    const container = document.querySelector('.grid-container');
+
+    function makeRows(rows, cols) {
+      container.style.setProperty('--grid-rows', rows);
+      container.style.setProperty('--grid-cols', cols);
+      let c = 0;
+      for (c = 0; c < (rows * cols); c++) {
+        let cell = document.createElement('div');
+        cell.innerText = (c + 1);
+        container.appendChild(cell).className = 'grid-item';
+      }
+    }
+
+    makeRows(10, 10);
   }
 }
 
