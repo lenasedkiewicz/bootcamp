@@ -106,7 +106,6 @@ class FinderPage {
 
     window.addEventListener('scroll', utils.reveal);
     utils.reveal();
-
     thisFinder.dom.buttonWrapper.addEventListener('click', function(event) {
       event.preventDefault();
 

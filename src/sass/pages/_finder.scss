@@ -1,3 +1,4 @@
+
 .grid-container {
   justify-content: center;
   display: grid;
@@ -13,6 +14,18 @@
   margin-bottom: -1px;
 }
 
+.grid-item-clicked {
+  background-color: orange;
+}
+
+.grid-item-clickable {
+  background-color: gray;
+}
+
+.grid-item-last-clicked {
+  background-color: lightcoral;
+}
+
 .finder-page-wrapper {
   display: none;
   margin-top: 13%;
@@ -20,12 +33,4 @@
 
 .active .finder-page-wrapper {
   display: block;
-}
-
-.grid-item-clicked {
-  background-color: orange;
-}
-
-.grid-item-clickable {
-  background-color: gray;
 }
