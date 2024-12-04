@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  text-align: center;
+  background: #000000;
+  color: #1b1919;
+  font-size: 20px;
+}
+
+h1,
+h2 {
+  font-family: "Special Elite", cursive;
+}
+
+h1 {
+  font-size: 72px;
+  padding: 50px 0 30px 0;
+}
+
+h2 {
+  font-size: 48px;
+  padding: 10px 0;
+}
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  background: #e4e4e4;
+}
+
+.song-text {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.song-text p {
+  padding-bottom: 10px;
+}
+
+.song-text p:nth-child(even) {
+  padding-left: 40px;
+}
+
+.song-text p:last-of-type {
+  padding-bottom: 50px;
+}
+
+@media all and (max-width: 600px) {
+    h1 {
+        font-size: 48px;
+        padding: 50px 20px 20px 20px;
+    }
+    h2 {
+        font-size: 36px;
+        padding: 20px;
+        margin: 0;
+    }
+    p {
+        padding-left: 20px;
+    }
+    img {
+      display: none;
+    }
+}
