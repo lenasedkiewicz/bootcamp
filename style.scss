@@ -1,0 +1,383 @@
+/* Global */
+
+$color-main: #c0392b;
+$color-accent: #81261d;
+$color-accent-light: #f0f0f0;
+$color-light: #ffffff;
+$font-text: 'Lato',
+sans-serif;
+$font-header: 'Source Serif Pro',
+serif;
+$font-size-logo: 30px;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    background: #fff;
+    color: #3d3d3d;
+    font-size: 18px;
+    line-height: 1.7;
+    font-family: $font-text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-header;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 108px 0;
+}
+
+.section-title {
+    position: relative;
+    font-size: 36px;
+    margin: 0 0 60px 0;
+}
+
+.section-title::after {
+    position: absolute;
+    content: '';
+    bottom: -12px;
+    left: 50%;
+    width: 100px;
+    height: 10px;
+    transform: translateX(-50%);
+    background: $color-main;
+}
+
+
+/* Navigation */
+
+nav {
+    overflow: hidden;
+    background-color: $color-accent;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+nav a {
+    display: inline-block;
+    color: $color-accent-light;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 14px;
+    text-decoration: none;
+}
+
+
+/* Splash */
+
+.splash {
+    height: 100vh;
+    position: relative;
+    background-color: #000;
+}
+
+.splash::before {
+    content: "";
+    background-image: url("images/homepage/mountains.jpg");
+    background-size: cover;
+    /*test fixed */
+    background-position: center center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+}
+
+.splash-inner {
+    position: absolute;
+    max-width: 900px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    opacity: 0.7;
+    padding: 40px 0;
+}
+
+.splash i {
+    font-size: $font-size-logo;
+    background: $color-main;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    color: $color-light;
+    border-radius: 50%;
+}
+
+.page-title {
+    color: $color-light;
+    font-size: 60px;
+    margin: 48px 0 0 0;
+    position: relative;
+}
+
+.page-title::after {
+    position: absolute;
+    content: '';
+    bottom: -24px;
+    left: 50%;
+    width: 100px;
+    height: 10px;
+    transform: translateX(-50%);
+    background: $color-main;
+}
+
+.page-subtitle {
+    color: $color-light;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 48px 0 0 0;
+    text-transform: uppercase;
+}
+
+
+/* Intro */
+
+.intro {
+    background: $color-light;
+}
+
+.intro p {
+    width: 70%;
+    margin: 0 auto;
+    padding: 48px 0;
+    font-size: 24px;
+    border-top: 1px solid $color-main;
+    position: relative;
+}
+
+.intro p::after {
+    position: absolute;
+    content: '';
+    bottom: -24px;
+    left: 50%;
+    width: 100px;
+    height: 1px;
+    transform: translateX(-50%);
+    background: $color-main;
+}
+
+.intro p.quote-author {
+    border-top: none;
+    border-bottom: 1px solid $color-main;
+    position: relative;
+}
+
+.intro p.quote-author::after {
+    display: none;
+}
+
+
+/* About */
+
+.about {
+    background: $color-accent-light;
+}
+
+
+/* Skills */
+
+[class^="skill-"] {
+    position: relative;
+}
+
+.skill-image {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 9;
+}
+
+.skill-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 2s;
+}
+
+.skill-image img:hover {
+    transform: scale(2);
+}
+
+.skill-right .skill-image {
+    top: 0;
+    right: 0;
+}
+
+.skill-right .skill-description {
+    padding: 36px 55% 36px 0;
+    text-align: right;
+}
+
+.skill-left .skill-description {
+    padding: 36px 0 36px 55%;
+    text-align: left;
+}
+
+
+/* Subpages */
+
+.subpage-header {
+    height: 50vh;
+    position: relative;
+    background-color: #000;
+}
+
+.subpage-header::before {
+    content: "";
+    background-image: url("images/homepage/mountains.jpg");
+    background-size: cover;
+    /*test fixed */
+    background-position: center center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+}
+
+.subpage-header__inner {
+    position: absolute;
+    max-width: 600px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    opacity: 0.7;
+    padding: 40px 0;
+}
+
+.subpage-header__title {
+    color: $color-light;
+    font-size: 60px;
+    margin: 30px 0;
+    position: relative;
+}
+
+.subpage section {
+    padding: 50px 0;
+}
+
+.subpage-content {
+    background: $color-accent-light;
+    width: 70%;
+    margin: 0 auto 50px auto;
+}
+
+.subpage-content .container {
+    padding: 0 50px;
+    text-align: left;
+}
+
+.subpage-blockquote {
+    width: 100%;
+    background: $color-accent;
+    color: $color-accent-light;
+    padding: 10px 40px;
+}
+
+.subpage-blockquote {
+    text-align: center;
+}
+
+.subpage-blockquote__author {
+    text-align: right;
+}
+
+
+/* Gallery */
+
+.row::before,
+.row::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.gallery-img img {
+    float: left;
+    width: 33.3333%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.gallery-overlay {
+    position: relative;
+}
+
+.gallery-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 33.333%;
+    right: 0;
+    height: 300px;
+    width: 33.333%;
+    opacity: 0;
+    transition: 2s ease;
+    background: #000;
+}
+
+.gallery-overlay:hover {
+    opacity: .75;
+}
+
+.gallery-overlay-text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, 70%);
+    text-align: center;
+}
+
+
+/* Footer */
+
+.page-footer {
+    background: $color-accent;
+    height: 10vh;
+}
+
+.page-footer p {
+    color: $color-accent-light;
+    padding: 15px 0;
+}
+
+.page-footer a {
+    color: $color-light;
+    text-decoration: none;
+}
+
+.page-footer a:hover {
+    color: $color-main;
+}

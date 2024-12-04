@@ -1,7 +1,15 @@
-# Bootcamp
+# Static HTML / CSS site
 
-Projekty z Bootcampu w ramach Kodilli:
+In this repository you can find simple static website created for psychologist practice. It's purpose is to train HTML and CSS skills.
 
-## Moduł 2: Strona dla Developera
+## For developers
 
-Technologie: HTML, SASS
+To add / change code you need IDE of your choice.
+
+# Statyczna strona HTML / CSS
+
+W tym repozytorium znajdziesz prostą statyczną stronę internetową stworzoną dla psychologa prowadzącego własną praktykę. Jej celem jest trening umiejętności HTML i CSS.
+
+## Dla programistów
+
+Aby dodać / zmienić kod, potrzebujesz środowiska programistycznego (IDE) według własnego wyboru.
