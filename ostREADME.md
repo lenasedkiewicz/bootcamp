@@ -29,6 +29,11 @@ Technologie: HTML, CSS
 Zbudowanie prostej strony, praca z task runnerami w package.json
 Technologie: HTML, CSS
 
+## Moduł 5 JS prework
+
+Zakodowanie logiki gry kamień - papier - nożyce.
+Technologie: HTML, CSS, JavaScript.
+
 ## Moduł 6: Blog korzystający z JS
 
 Technologie: HTML, CSS, JavaScript
