@@ -42,3 +42,7 @@ Technologie: HTML, CSS, JavaScript.
 ## Moduł 6: Blog korzystający z JS
 
 Technologie: HTML, CSS, JavaScript
+
+## Moduł 7
+
+Szablon konfiguracji eslint i stylelint
