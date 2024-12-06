@@ -55,3 +55,8 @@ Technologie: HTML, SASS, JavaScript
 
 Strona dla pizzeri - zamawianie potraw na wynos, rezerwacja stolika
 Technologie: HTML, SASS, JavaScript
+
+## Moduł 15 - aplikacja to do
+
+Aplikacja do tworzenia list to-do.
+Technologie: React, Redux, JavaScript, SCSS
