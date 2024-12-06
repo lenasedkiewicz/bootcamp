@@ -56,6 +56,11 @@ Technologie: HTML, SASS, JavaScript
 Strona dla pizzeri - zamawianie potraw na wynos, rezerwacja stolika
 Technologie: HTML, SASS, JavaScript
 
+## Moduł 14 - Pathfinder
+
+Projekt Pathfinder - aplikacja do planowania podróży
+Technologie: HTML, SASS, JavaScript
+
 ## Moduł 15 - aplikacja to do
 
 Aplikacja do tworzenia list to-do.
