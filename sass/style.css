@@ -1,0 +1,29 @@
+/* Variables */
+/* Global */
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Indie Flower", cursive;
+}
+
+h1 {
+  font-size: 75px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+/* Navbar */
+.splash__logo {
+  width: 100px;
+}
+
+/* Splash section *//*# sourceMappingURL=style.css.map */
