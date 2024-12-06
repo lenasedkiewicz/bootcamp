@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext");
+
+/* Variables */
+
+$color-light: #fff;
+$color-dark: #444;
+$color-black: #000;
+
+$font-logo: "Sacramento", cursive;
+$font-header: "Oswald", sans-serif;
+$font-text: "Source Sans Pro", sans-serif;
+
+/* Global */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(9, 9, 121);
+  background: linear-gradient(
+    90deg,
+    rgba(9, 9, 121, 1) 17%,
+    rgba(255, 255, 255, 1) 33%,
+    rgba(255, 255, 255, 1) 65%,
+    rgba(235, 19, 19, 1) 90%
+  );
+  font-family: $font-text;
+  color: $color-dark;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+h1 {
+  color: $color-black;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 22px;
+  text-transform: uppercase;
+  font-family: $font-header;
+  font-weight: 600;
+
+  span {
+    text-transform: none;
+    font-weight: 400;
+    color: lighten($color-dark, 20%);
+  }
+}
+
+/* Layout */
+
+.wrapper {
+  display: flex;
+  margin-left: 10px;
+}
+
+@media all and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}
+
+.sidebar {
+  flex: 1 0 0;
+}
+
+.posts {
+  flex: 2 0 0;
+}
+
+.sidebar,
+.posts {
+  background: $color-light;
+  margin-right: 10px;
+  padding: 40px;
+  border: 1px solid $color-dark;
+  border-radius: 5px;
+}
+
+/* Logo */
+
+.logo {
+  font-family: $font-logo;
+  font-weight: 400;
+  font-size: 104px;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Lists */
+
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  .active {
+    font-weight: bold;
+    color: #0543b0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.list-horizontal {
+  li {
+    display: inline-block;
+  }
+}
+
+/* Authors */
+
+.authors {
+  li {
+    margin-bottom: 12px;
+  }
+}
+
+/* Post */
+
+.post {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.post-author {
+  font-style: italic;
+}
+
+.post-tags {
+  display: flex;
+
+  p {
+    margin: 0 10px 0 0;
+  }
+}
+
+/* Tags special classes. Reference: https://www.colorhexa.com/0040ff */
+
+.tags li {
+  display: inline;
+}
+.tags .active {
+  color:rgba(235, 19, 19, 1);
+}
+.tag-size-1 {
+  background-color: #ebf0ff;
+}
+
+.tag-size-2 {
+  font-size: 18px;
+  background-color: #c4d3ff;
+  padding: 2px;
+}
+
+.tag-size-3 {
+  font-size: 20px;
+  background-color: #9db6ff;
+  padding: 2px;
+}
+
+.tag-size-4 {
+  font-size: 22px;
+  background-color: #7698ff;
+  padding: 2px;
+}
