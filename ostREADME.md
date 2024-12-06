@@ -50,3 +50,8 @@ Szablon konfiguracji eslint i stylelint
 ## Moduł 10 aplikacja książkowa
 
 Technologie: HTML, SASS, JavaScript
+
+## Moduł 11 - strona pizzerii
+
+Strona dla pizzeri - zamawianie potraw na wynos, rezerwacja stolika
+Technologie: HTML, SASS, JavaScript
