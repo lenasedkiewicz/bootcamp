@@ -1,0 +1,16 @@
+@import '../../styles/settings.scss';
+.hero {
+  padding: $base-size;
+}
+
+.subtitle {
+  padding: ($base-size * 2) 0;
+  text-align: center;
+  font-size: ($base-size * 2);
+  font-style: italic;
+  font-weight: normal;
+}
+
+.subtitle {
+  margin-top: (- $base-size * 3);
+}
