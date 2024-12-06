@@ -97,7 +97,7 @@
             favoriteBooks.splice(indexId, 1);
           }
         }
-      });
+      }); console.log(thisBook.filters);
 
       thisBook.filters.addEventListener("click", function (e) {
         const filter = e.target;

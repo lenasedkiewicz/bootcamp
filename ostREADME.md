@@ -46,3 +46,7 @@ Technologie: HTML, CSS, JavaScript
 ## Moduł 7
 
 Szablon konfiguracji eslint i stylelint
+
+## Moduł 10 aplikacja książkowa
+
+Technologie: HTML, SASS, JavaScript
