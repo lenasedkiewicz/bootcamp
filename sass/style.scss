@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FBE7C6;
+}
+
+.container {
+    width: 1140px;
+    max-width: 90%;
+    margin: 100px auto;
+}
+
+#buttons {
+    text-align: center;
+}
+
+button {
+    border: none;
+    font-size: 25px;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0 20px;
+}
+
+#play-rock {
+    background-color: #FFAEBC;
+}
+#play-paper {
+    background-color: #B4F8C8;
+}
+
+#play-scissors {
+    background-color: #A0E7E5;
+}
+
+#messages, .instructions {
+    padding: 50px 10px;
+    font-size: 30px;
+    text-align: center;
+}

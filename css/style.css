@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FBE7C6;
+}
+
+.container {
+  width: 1140px;
+  max-width: 90%;
+  margin: 100px auto;
+}
+
+#buttons {
+  text-align: center;
+}
+
+button {
+  border: none;
+  font-size: 25px;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 0 20px;
+}
+
+#play-rock {
+  background-color: #FFAEBC;
+}
+
+#play-paper {
+  background-color: #B4F8C8;
+}
+
+#play-scissors {
+  background-color: #A0E7E5;
+}
+
+#messages, .instructions {
+  padding: 50px 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0VBR0ksc0JBQUE7QUNDSjs7QURFQTtFQUNJLHlCQUFBO0FDQ0o7O0FERUE7RUFDSSxhQUFBO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0FDQ0o7O0FERUE7RUFDSSxrQkFBQTtBQ0NKOztBREVBO0VBQ0ksWUFBQTtFQUNBLGVBQUE7RUFDQSxhQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBO0FDQ0o7O0FERUE7RUFDSSx5QkFBQTtBQ0NKOztBRENBO0VBQ0kseUJBQUE7QUNFSjs7QURDQTtFQUNJLHlCQUFBO0FDRUo7O0FEQ0E7RUFDSSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtBQ0VKIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */
