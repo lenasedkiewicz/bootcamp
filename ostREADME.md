@@ -14,7 +14,12 @@ Technologie: HTML, CSS
 Zbudowanie strony w oparciu o SASS
 Technologie: HTML, SASS
 
-## Moduł 3
+## Moduł 3 - dietetyk
+
+Ćwiczenie kodowania strony za pomocą Bootstrapa
+Technologie: HTML, CSS, Bootstrap
+
+## Moduł 3 - agency website
 
 Ćwiczenie kodowania strony za pomocą Bootstrapa
 Technologie: HTML, CSS, Bootstrap
