@@ -1,0 +1,125 @@
+/* Variables */
+/* Global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif, "Arial", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif, "Arial", sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Navigation */
+.top-bar {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 57px;
+}
+.top-bar a {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px;
+}
+.top-bar i {
+  color: #fff;
+}
+.top-bar .logo a {
+  font-size: 24px;
+  text-transform: none;
+}
+.top-bar .logo a span {
+  color: green;
+}
+.top-bar .top-bar__container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Splash */
+.splash {
+  height: 100vh;
+  position: relative;
+  background-color: #000;
+}
+.splash:before {
+  content: "";
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_960_720.jpg");
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+}
+.splash .splash-inner {
+  position: absolute;
+  max-width: 900px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 0;
+  text-align: center;
+}
+.splash .splash-inner .page-title {
+  color: #fff;
+  font-size: 60px;
+  margin: 48px 0 0 0;
+  position: relative;
+  font-weight: 300;
+}
+.splash .splash-inner .page-title span {
+  font-weight: 600;
+}
+.splash .splash-inner .page-subtitle {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 24px 0 48px 0;
+}
+
+.btn {
+  border: 2px solid #fff;
+  padding: 10px 40px;
+  border-radius: 50px;
+}
+.btn:hover {
+  border: 2px solid #000;
+  background-color: #000;
+}
+
+a.btn {
+  color: #fff;
+  text-decoration: none;
+}
+a.btn:hover {
+  color: #fff;
+  font-weight: 600;
+}/*# sourceMappingURL=style.css.map */
