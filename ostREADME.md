@@ -12,6 +12,8 @@ Technologie: HTML, CSS
 
 Technologie: HTML, SASS
 
+## Moduł 3
+
 ## Moduł 4: pierwsze kroki z NPM
 
 Technologie: HTML, CSS, NPM

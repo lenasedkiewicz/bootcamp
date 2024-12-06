@@ -13,3 +13,6 @@ W tym repozytorium znajdziesz prostą statyczną stronę internetową stworzoną
 ## Dla programistów
 
 Aby dodać / zmienić kod, potrzebujesz środowiska programistycznego (IDE) według własnego wyboru.
+
+![alt text](image.png)
+![alt text](image-1.png)
