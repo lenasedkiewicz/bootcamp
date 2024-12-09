@@ -65,3 +65,11 @@ Technologie: HTML, SASS, JavaScript
 
 Aplikacja do tworzenia list to-do.
 Technologie: React, Redux, JavaScript, SCSS
+
+## Moduł 15 - aplikacja książkowa
+
+Technologie: React, JavaScript
+
+## Moduł 15 - aplikacja książkowa, ćwiczenie 2
+
+Technologie:
