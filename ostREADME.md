@@ -78,6 +78,10 @@ Technologie: React, SCSS, JavaScript
 
 Technologie: React, SCSS, JavaScript
 
+## Moduł 17 - react books app with redux
+
+Technologie: React, Redux, SCSS, JavaScript
+
 ## Moduł 20 - Weather App
 
 Technologie: React, SCSS, JavaScript
