@@ -82,6 +82,11 @@ Technologie: React, SCSS, JavaScript
 
 Technologie: React, Redux, SCSS, JavaScript
 
+## Moduł 18 - Aplikacja Blogowa
+
+Klasyczny CRUD.
+Technologie: React, Redux, SCSS, JavaScript
+
 ## Moduł 20 - Weather App
 
 Technologie: React, SCSS, JavaScript
@@ -89,3 +94,8 @@ Technologie: React, SCSS, JavaScript
 ## Moduł 21 - Currency App
 
 Technologie: React, SCSS, JavaScript
+
+### Team project
+
+Projekt grupowy.
+Technologie: React, Redux, SCSS, JavaScript
