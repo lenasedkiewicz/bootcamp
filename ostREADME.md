@@ -87,6 +87,10 @@ Technologie: React, Redux, SCSS, JavaScript
 Klasyczny CRUD.
 Technologie: React, Redux, SCSS, JavaScript
 
+## Moduł 19 - Waiter App
+
+Technologie: React, Redux, SCSS, JavaScript
+
 ## Moduł 20 - Weather App
 
 Technologie: React, SCSS, JavaScript
