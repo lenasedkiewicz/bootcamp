@@ -1,0 +1,17 @@
+@import "../../../styles/settings.scss";
+
+.swipeable{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .swipButton{
+    margin: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: -50px;
+    background-color: rgb(216, 216, 216);
+    border: none;
+  }
+}

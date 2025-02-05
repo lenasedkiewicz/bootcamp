@@ -1,0 +1,33 @@
+.root {
+  background-color: #ffffff;
+  margin-bottom: 2rem;
+
+  .brandsSectionRow {
+    padding: 0 15px;
+  }
+
+  .sectionElementsWrapper {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #e1e1e1;
+    border-left: none;
+    border-right: none;
+    padding: 15px 0;
+  }
+
+  .arrowButtonLeft, .arrowButtonRight {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .brandsWrapper {
+    display: flex;
+  }
+
+  .brandImage {
+    img {
+      width: 100%;
+    }
+  }
+}

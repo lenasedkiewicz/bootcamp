@@ -1,0 +1,15 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 0;
+  position: relative;
+
+  .greyBg {
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $granitGrey;
+  }
+}

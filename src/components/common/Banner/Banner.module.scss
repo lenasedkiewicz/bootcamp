@@ -1,0 +1,51 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 0;
+
+  .banner {
+    padding: ($base-padding * 2) 0;
+    background-color: $banner-bg;
+    color: $banner-text;
+
+    p {
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .bannerTitle {
+      font-size: 50px;
+      line-height: 40px;
+      padding-bottom: 6px;
+    }
+
+    .bannerSubtitle {
+      padding: 0;
+      line-height: 25px;
+      padding-left: 10px;
+      font-size: 25px;
+      letter-spacing: 8px;
+      word-spacing: 8px;
+    }
+
+    .percent {
+      color: $banner-percent;
+    }
+  }
+  .bannerMenu {
+    background-color: $banner-menu-bg;
+    padding: $base-padding * 0.5;
+
+    p {
+      margin: 0;
+      font-size: 12px;
+      word-spacing: 5px;
+
+      .orangeText {
+        color: $banner-text-menu-hover;
+        font-weight: 700;
+      }
+    }
+  }
+}

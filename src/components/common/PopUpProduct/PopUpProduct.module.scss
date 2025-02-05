@@ -1,0 +1,99 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .popupWindow {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(200, 200, 200, 0.5);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+  }
+
+  .popupContainer {
+    position: relative;
+    width: 700px;
+    height: 400px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+  }
+  .popupClose {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .popupClosingBtn {
+    padding: 7px 10px;
+    line-height: 13px;
+  }
+
+  .popupProductReview {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .popupPhoto {
+    padding: 0;
+    position: relative;
+    background: {
+      color: #f4f5f7;
+      size: contain;
+      position: center;
+      repeat: no-repeat;
+    }
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+
+    .image {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .popupDetails {
+    padding-left: 20px;
+  }
+
+  h5 {
+    color: $primary;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+  }
+
+  .popupStars {
+    margin: 10px 0;
+  }
+
+  .prices {
+    display: flex;
+  }
+
+  .btnoldprice {
+    color: $lightGrey;
+    text-decoration: line-through;
+    text-decoration-color: $darkGrey;
+    background: $white;
+  }
+
+  .popupDescription {
+    margin-top:  10px;
+  }
+
+  .description {
+    color: $darkGrey;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
