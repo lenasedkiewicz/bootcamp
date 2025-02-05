@@ -78,6 +78,10 @@ Technologie: React, SCSS, JavaScript
 
 Technologie: React, SCSS, JavaScript
 
-## Weather App
+## Moduł 20 - Weather App
+
+Technologie: React, SCSS, JavaScript
+
+## Moduł 21 - Currency App
 
 Technologie: React, SCSS, JavaScript
