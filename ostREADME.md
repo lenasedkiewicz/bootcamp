@@ -64,12 +64,20 @@ Technologie: HTML, SASS, JavaScript
 ## Moduł 15 - aplikacja to do
 
 Aplikacja do tworzenia list to-do.
-Technologie: React, Redux, SCSS
+Technologie: React, Redux, SCSS, JavaScript
 
 ## Moduł 15 - aplikacja książkowa, ćwiczenie 1 i 2
 
-Technologie: React
+Technologie: React, JavaScript
 
 ## Moduł 16 - stoper
 
-Technologie: React, SCSS
+Technologie: React, SCSS, JavaScript
+
+## Moduł 16 - T-Shirt app
+
+Technologie: React, SCSS, JavaScript
+
+## Weather App
+
+Technologie: React, SCSS, JavaScript
